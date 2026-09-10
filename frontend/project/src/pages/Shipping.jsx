@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../components/pageTitle";
 import "../pagesStyling/Shipping.css";
 import CheckoutSteps from "./CheckoutSteps";
 import { Country, State, City }  from 'country-state-city';
