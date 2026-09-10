@@ -62,32 +62,21 @@ app.use("/api", paymentRoutes);
 // -------------------------------
 // Serve frontend in production
 // -------------------------------
-
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(
-    __dirname,
-    "../frontend/project/dist"
-  );
-
+  const frontendPath = path.join(__dirname,"../frontend/project/dist");
   app.use(express.static(frontendPath));
-
   app.get("/{*splat}", (req, res) => {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
+
 // Error Handler
 import ExpressError from "./utils/ExpressError.js";
-
 app.use((err, req, res, next) => {
   if (err.name === "CastError") {
     err = new ExpressError("Invalid ID Format", 404);
   }
-
-  const {
-    statusCode = 500,
-    message = "Something went wrong",
-  } = err;
-
+  const {statusCode = 500,message = "Something went wrong",} = err;
   res.status(statusCode).send(message);
 });
 
