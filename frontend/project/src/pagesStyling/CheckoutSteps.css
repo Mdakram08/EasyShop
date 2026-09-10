@@ -1,0 +1,68 @@
+.checkout-steps{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:30px 0 50px;
+}
+
+.step{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:#999;
+    font-size:14px;
+    font-weight:500;
+}
+
+.circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:2px solid #ccc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:8px;
+    background:#fff;
+    transition:.3s;
+}
+
+.line{
+    width:120px;
+    height:2px;
+    background:#ccc;
+    margin:0 15px;
+    margin-bottom:28px;
+}
+
+.active .circle{
+    background:#111;
+    border-color:#111;
+    color:#fff;
+}
+
+.active{
+    color:#111;
+}
+
+.active-line{
+    background:#111;
+}
+
+@media(max-width:768px){
+
+.line{
+    width:60px;
+}
+
+.circle{
+    width:35px;
+    height:35px;
+}
+
+.step{
+    font-size:12px;
+}
+
+}

@@ -1,0 +1,23 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.star {
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.star.filled {
+    color: rgba(226, 226, 0, 0.724);
+}
+
+.star.empty {
+    color: #ccc;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,144 @@
+/* ==========================
+   UPDATE PROFILE - H&M / ZARA
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.upd-container{
+    width:100%;
+    min-height:90vh;
+    background:#fafafa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.upd-form-content{
+    width:100%;
+    max-width:450px;
+}
+
+.upd-form{
+    background:#ffffff;
+    border:1px solid #e6e6e6;
+    padding:45px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.upd-form h2{
+    font-size:30px;
+    letter-spacing:4px;
+    font-weight:500;
+    color:#111;
+    margin-bottom:35px;
+    text-transform:uppercase;
+}
+
+.upd-profile-image{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid #dcdcdc;
+    margin-bottom:25px;
+}
+
+.upd-file-input{
+    width:100%;
+    margin-bottom:30px;
+    font-size:14px;
+    color:#444;
+}
+
+.upd-file-input::file-selector-button{
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:12px 18px;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.upd-file-input::file-selector-button:hover{
+    background:#333;
+}
+
+.upd-input-group{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.upd-input-group input{
+    width:100%;
+    height:52px;
+    padding:0 16px;
+    border:1px solid #dcdcdc;
+    background:#fff;
+    font-size:15px;
+    color:#111;
+    outline:none;
+    transition:.3s;
+}
+
+.upd-input-group input::placeholder{
+    color:#999;
+}
+
+.upd-input-group input:focus{
+    border-color:#111;
+}
+
+.upd-auth-btn{
+    width:100%;
+    height:52px;
+    border:none;
+    background:#111;
+    color:#fff;
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+.upd-auth-btn:hover{
+    background:#2d2d2d;
+}
+
+.upd-auth-btn:disabled{
+    background:#999;
+    cursor:not-allowed;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .upd-container{
+        padding:30px 15px;
+    }
+
+    .upd-form{
+        padding:30px 22px;
+    }
+
+    .upd-form h2{
+        font-size:24px;
+        letter-spacing:3px;
+    }
+
+    .upd-profile-image{
+        width:110px;
+        height:110px;
+    }
+}  

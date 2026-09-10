@@ -1,0 +1,549 @@
+/* =========================================================
+   PRODUCT DETAILS - H&M / ZARA INSPIRED
+   Minimal • Editorial • Fashion Store
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.product-details-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 45px 55px 80px;
+  background: #fff;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   MAIN PRODUCT SECTION
+   ========================================================= */
+
+.product-detail-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.85fr);
+  gap: 70px;
+  align-items: start;
+}
+
+/* =========================================================
+   IMAGE SECTION
+   ========================================================= */
+
+.product-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main product image */
+
+.product-detail-image {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  display: block;
+  background: #f4f4f4;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect */
+
+.product-detail-image:hover {
+  opacity: 0.96;
+}
+
+/* =========================================================
+   THUMBNAILS
+   ========================================================= */
+
+.product-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.thumbnails-image {
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #f5f5f5;
+  transition: all 0.25s ease;
+}
+
+.thumbnails-image:hover {
+  border-color: #111;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   PRODUCT INFORMATION
+   ========================================================= */
+
+.product-info {
+  padding: 5px 5px 0 10px;
+  position: sticky;
+  top: 25px;
+}
+
+.product-info h2 {
+  margin: 0 0 18px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Description */
+
+.product-description {
+  margin: 0 0 28px;
+  max-width: 560px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.product-price {
+  margin: 0 0 22px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.productCardSpan {
+  font-size: 13px;
+  color: #555;
+}
+
+/* =========================================================
+   STOCK
+   ========================================================= */
+
+.stock-status {
+  margin: 20px 0;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.in-stock {
+  color: #222;
+}
+
+.out-of-stock {
+  color: #c62828;
+}
+
+/* =========================================================
+   QUANTITY
+   ========================================================= */
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 25px 0;
+  border: 1px solid #111;
+}
+
+.quantity-label {
+  display: none;
+}
+
+.quantity-button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quantity-button:hover {
+  background: #f2f2f2;
+}
+
+.quantity-value {
+  width: 50px;
+  height: 45px;
+  border: none;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+/* =========================================================
+   REVIEWS COUNT
+   ========================================================= */
+
+.product-reviews {
+  margin: 15px 0 22px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* =========================================================
+   ADD TO CART
+   ========================================================= */
+
+.add-to-cart {
+  width: 100%;
+  height: 55px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-to-cart:hover {
+  background: #fff;
+  color: #111;
+}
+
+.add-to-cart:disabled {
+  background: #777;
+  border-color: #777;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   REVIEW FORM
+   ========================================================= */
+
+.review-form {
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.review-form h3 {
+  margin: 0 0 22px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Textarea */
+
+.review_input {
+  width: 100%;
+  min-height: 120px;
+  margin-top: 20px;
+  padding: 15px;
+  resize: vertical;
+  border: 1px solid #bbb;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #111;
+}
+
+.review_input:focus {
+  border-color: #111;
+}
+
+.review_input::placeholder {
+  color: #888;
+}
+
+/* Submit review */
+
+.submit-review-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.submit-review-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.submit-review-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Login message */
+
+.no-review-login {
+  margin-top: 35px;
+  padding: 18px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+  color: #666;
+}
+
+/* =========================================================
+   CUSTOMER REVIEWS
+   ========================================================= */
+
+.review-container {
+  margin-top: 85px;
+  padding-top: 45px;
+  border-top: 1px solid #111;
+}
+
+.c-r {
+  margin: 0 0 35px;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.c-r b {
+  font-weight: 500;
+}
+
+/* Reviews grid */
+
+.review-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-item {
+  min-height: 180px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.review-item:hover {
+  border-color: #111;
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Review comment */
+
+.review-comment {
+  margin: 18px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Reviewer name */
+
+.review-name {
+  margin: 5px 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.review-name b {
+  font-weight: 600;
+}
+
+/* No reviews */
+
+.no-reviews {
+  padding: 30px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 1000px) {
+
+  .product-details-container {
+    padding: 35px 30px 60px;
+  }
+
+  .product-detail-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .product-info {
+    position: static;
+    padding: 0;
+  }
+
+  .product-detail-image {
+    height: 600px;
+  }
+
+  .review-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .product-details-container {
+    padding: 20px 15px 50px;
+  }
+
+  .product-detail-container {
+    display: block;
+  }
+
+  /* Main image */
+
+  .product-detail-image {
+    height: 450px;
+  }
+
+  /* Thumbnails */
+
+  .product-thumbnails {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .thumbnails-image {
+    height: 85px;
+  }
+
+  /* Product information */
+
+  .product-info {
+    margin-top: 30px;
+  }
+
+  .product-info h2 {
+    font-size: 23px;
+    margin-bottom: 14px;
+  }
+
+  .product-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  /* Rating */
+
+  .product-rating {
+    padding: 15px 0;
+  }
+
+  /* Quantity */
+
+  .quantity-controls {
+    margin: 20px 0;
+  }
+
+  .quantity-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .quantity-value {
+    height: 42px;
+  }
+
+  /* Cart */
+
+  .add-to-cart {
+    height: 52px;
+  }
+
+  /* Reviews */
+
+  .review-container {
+    margin-top: 55px;
+    padding-top: 30px;
+  }
+
+  .c-r {
+    font-size: 18px;
+  }
+
+  .review-section {
+    grid-template-columns: 1fr;
+  }
+
+  .review-item {
+    padding: 20px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+  .product-details-container {
+    padding: 15px 12px 40px;
+  }
+
+  .product-detail-image {
+    height: 390px;
+  }
+
+  .thumbnails-image {
+    height: 70px;
+  }
+
+  .product-info h2 {
+    font-size: 20px;
+  }
+}

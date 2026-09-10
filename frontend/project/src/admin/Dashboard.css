@@ -1,0 +1,271 @@
+/* =========================================
+   ADMIN DASHBOARD
+   H&M / ZARA INSPIRED THEME
+========================================= */
+
+.admin-container {
+    min-height: 70vh;
+    padding: 55px 6%;
+    background: #f7f7f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   DASHBOARD HEADER
+========================================= */
+
+.admin-header {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.admin-header h1 {
+    margin: 0;
+    color: #111;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.admin-header p {
+    margin: 12px 0 0;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.admin-header p b {
+    font-weight: 500;
+}
+
+.admin-description {
+    max-width: 950px;
+    margin-top: 20px !important;
+    color: #777 !important;
+    font-size: 13px !important;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   ADMIN CARDS
+========================================= */
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.admin-card {
+    min-height: 150px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #dedede;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.admin-card:hover {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.admin-card > svg {
+    min-width: 25px;
+    font-size: 24px;
+    color: #111;
+    transition: color 0.25s ease;
+}
+
+.admin-card:hover > svg {
+    color: #fff;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.admin-card h3 {
+    margin: 0;
+    color: #111;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.admin-card p {
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.admin-card:hover h3 {
+    color: #fff;
+}
+
+.admin-card:hover p {
+    color: #ccc;
+}
+
+
+/* =========================================
+   DASHBOARD DESCRIPTION
+========================================= */
+
+.admin-content > .admin-description {
+    max-width: 1100px;
+    margin: 50px auto 10px;
+    padding: 35px 40px;
+
+    background: #fff;
+    border: 1px solid #dedede;
+
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+    text-align: justify;
+}
+
+
+/* =========================================
+   PARAGRAPH SPACING
+========================================= */
+
+.admin-content > .admin-description {
+    white-space: normal;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-container {
+        padding: 45px 4%;
+    }
+
+    .admin-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .admin-container {
+        padding: 35px 15px;
+    }
+
+    .admin-header {
+        padding-bottom: 25px;
+    }
+
+    .admin-header h1 {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+    }
+
+    .admin-header p {
+        font-size: 13px;
+    }
+
+    .admin-description {
+        font-size: 12px !important;
+        line-height: 1.7;
+    }
+
+    .admin-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .admin-card {
+        min-height: 110px;
+        padding: 22px;
+    }
+
+    .admin-card > svg {
+        font-size: 21px;
+    }
+
+    .admin-content > .admin-description {
+        margin-top: 30px;
+        padding: 25px 20px;
+        font-size: 12px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .admin-header h1 {
+        font-size: 21px;
+    }
+
+    .admin-card {
+        min-height: 100px;
+        padding: 18px;
+    }
+
+    .admin-card h3 {
+        font-size: 12px;
+    }
+
+    .admin-card p {
+        font-size: 10px;
+    }
+
+}

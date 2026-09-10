@@ -1,0 +1,130 @@
+
+/* Google Font (Optional) */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap'); */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    /* font-family:'Montserrat',sans-serif; */
+}
+
+.profile-page{
+    width:100%;
+    min-height:100vh;
+    background:#fafafa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:70px 20px;
+}
+
+.profile-card{
+    width:430px;
+    background:#fff;
+    border:1px solid #e8e8e8;
+    padding:45px 35px;
+    text-align:center;
+    transition:.3s;
+}
+
+.profile-card:hover{
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+.profile-image{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid #dcdcdc;
+    margin-bottom:25px;
+}
+
+.profile-card h2{
+    font-size:28px;
+    font-weight:500;
+    color:#111;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.profile-card p{
+    font-size:15px;
+    color:#777;
+    margin-bottom:15px;
+}
+
+.admin-badge{
+    display:inline-block;
+    margin:15px 0 30px;
+    padding:8px 20px;
+    border:1px solid #111;
+    color:#494444;
+    background:#fff;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.profile-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:15px;
+}
+
+.customize-section{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.profile-btn{
+    width:100%;
+    padding:15px;
+    text-decoration:none;
+    border:1px solid #111;
+    background:#fff;
+    color:#111;
+    font-size:15px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.profile-btn:hover{
+    background:#111;
+    color:#fff;
+}
+
+.logout-btn{
+    background:#000000;
+    color:#fff;
+}
+
+.logout-btn:hover{
+    background:#fff;
+    color:#111;
+}
+
+@media(max-width:600px){
+
+    .profile-card{
+        width:100%;
+        padding:35px 25px;
+    }
+
+    .profile-image{
+        width:120px;
+        height:120px;
+    }
+
+    .profile-card h2{
+        font-size:24px;
+    }
+
+}

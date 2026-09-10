@@ -1,0 +1,370 @@
+/* =========================================
+   ADMIN USERS - H&M / ZARA STYLE
+========================================= */
+
+.admin-users-container {
+  min-height: 70vh;
+  padding: 55px 6%;
+  background: #f8f8f6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-users-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 35px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.admin-users-header h1 {
+  margin: 0;
+  color: #111;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.admin-users-header p {
+  margin: 9px 0 0;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.total-users {
+  color: #555;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.total-users strong {
+  margin-left: 5px;
+  color: #111;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   TABLE CONTAINER
+========================================= */
+
+.users-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #dedede;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.users-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.users-table thead {
+  background: #111;
+}
+
+.users-table th {
+  padding: 17px 18px;
+  color: #fff;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE BODY
+========================================= */
+
+.users-table td {
+  padding: 19px 18px;
+  border-bottom: 1px solid #e8e8e8;
+  color: #444;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.users-table tbody tr {
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #f6f6f4;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   USER NAME
+========================================= */
+
+.user-name {
+  color: #111 !important;
+  font-size: 14px !important;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   ROLE
+========================================= */
+
+.user-role {
+  display: inline-block;
+  min-width: 55px;
+  padding: 6px 12px;
+  border: 1px solid #d5d5d5;
+  color: #444;
+  background: #f7f7f7;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.admin-role {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================================
+   COMMON BUTTON STYLE
+========================================= */
+
+.user-actions button {
+  min-width: 75px;
+  padding: 9px 12px;
+  border: 1px solid #111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit-user-btn {
+  background: #111;
+  color: #fff;
+}
+
+.edit-user-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-user-btn {
+  border-color: #ccc !important;
+  background: #fff;
+  color: #333;
+}
+
+.delete-user-btn:hover {
+  border-color: #111 !important;
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.user-actions svg {
+  font-size: 10px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.users-loading {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #dedede;
+}
+
+.users-loading h2 {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   NO USERS
+========================================= */
+
+.no-users {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #dedede;
+}
+
+.no-users h2 {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.users-table-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.users-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.users-table-container::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+
+/* =========================================
+   TABLE NUMBER COLUMN
+========================================= */
+
+.users-table th:first-child,
+.users-table td:first-child {
+  width: 60px;
+  text-align: center;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .admin-users-container {
+    padding: 40px 4%;
+  }
+
+  .admin-users-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-users-header h1 {
+    font-size: 23px;
+  }
+
+  .total-users {
+    align-self: flex-end;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .admin-users-container {
+    padding: 30px 15px;
+  }
+
+  .admin-users-header {
+    margin-bottom: 25px;
+  }
+
+  .admin-users-header h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .admin-users-header p {
+    font-size: 10px;
+  }
+
+  .users-table th {
+    padding: 14px;
+  }
+
+  .users-table td {
+    padding: 15px 14px;
+  }
+
+  .user-actions {
+    flex-direction: row;
+  }
+
+}

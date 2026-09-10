@@ -1,0 +1,15 @@
+.home-products-container {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;      /* Move cards to next row */
+  gap: 30px;            /* Space between cards */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-heading{
+  text-align: center;
+  font-family:'Montserrat',sans-serif;
+}
+

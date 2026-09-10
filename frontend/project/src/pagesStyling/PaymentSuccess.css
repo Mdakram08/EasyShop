@@ -1,0 +1,166 @@
+.payment-success-page {
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #fafafa;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Success Icon */
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: #16a34a;
+    color: white;
+
+    font-size: 45px;
+    font-weight: bold;
+}
+
+/* Heading */
+
+.success-card h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.success-message {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Payment Details */
+
+.payment-details {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.payment-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 20px;
+    border-bottom: 1px solid #eeeeee;
+    gap: 20px;
+}
+
+.payment-detail-row:last-child {
+    border-bottom: none;
+}
+
+.payment-detail-row span {
+    color: #666;
+}
+
+.payment-detail-row strong {
+    color: #111;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* Status */
+
+.payment-detail-row.status strong {
+    color: #16a34a;
+}
+
+/* Buttons */
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.track-order-btn,
+.continue-shopping-btn {
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.track-order-btn {
+    background: #000;
+    color: #fff;
+}
+
+.track-order-btn:hover {
+    background: #333;
+}
+
+.continue-shopping-btn {
+    border: 1px solid #000;
+    color: #000;
+    background: #fff;
+}
+
+.continue-shopping-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .payment-success-page {
+        padding: 40px 15px;
+    }
+
+    .success-card {
+        padding: 30px 20px;
+    }
+
+    .success-card h1 {
+        font-size: 26px;
+    }
+
+    .payment-detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+    .payment-detail-row strong {
+        text-align: left;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .track-order-btn,
+    .continue-shopping-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

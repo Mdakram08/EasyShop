@@ -1,0 +1,646 @@
+/* =========================================
+   ADMIN ORDERS
+   H&M / ZARA BLACK & WHITE STYLE
+========================================= */
+
+.admin-orders-page {
+    min-height: 70vh;
+
+    padding: 55px 6%;
+
+    background: #f8f8f6;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #111;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-orders-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 35px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.admin-orders-header h1 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.admin-orders-header p {
+    margin: 9px 0 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   EXPORT BUTTON
+========================================= */
+
+.orders-export-btn {
+    min-width: 110px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #111;
+
+    background: #111;
+
+    color: #fff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.orders-export-btn:hover {
+    background: #fff;
+
+    color: #111;
+}
+
+
+/* =========================================
+   ORDER STATISTICS
+========================================= */
+
+.orders-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-bottom: 35px;
+
+    background: #d8d8d8;
+
+    border: 1px solid #d8d8d8;
+}
+
+.orders-stat-card {
+    min-height: 105px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.orders-stat-card:hover {
+    background: #fafafa;
+}
+
+.orders-stat-card span {
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.orders-stat-card h2 {
+    margin: 10px 0 0;
+
+    color: #111;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   TABLE CONTAINER
+========================================= */
+
+.orders-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #fff;
+
+    border: 1px solid #dedede;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.orders-table {
+    width: 100%;
+
+    min-width: 1100px;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.orders-table thead {
+    background: #111;
+}
+
+.orders-table th {
+    padding: 17px 18px;
+
+    color: #fff;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE BODY
+========================================= */
+
+.orders-table td {
+    padding: 19px 18px;
+
+    color: #444;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    vertical-align: middle;
+}
+
+.orders-table tbody tr {
+    background: #fff;
+
+    transition: background 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+    background: #f6f6f4;
+}
+
+.orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   ORDER ID
+========================================= */
+
+.orders-table td:first-child {
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   CUSTOMER
+========================================= */
+
+.customer {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 160px;
+}
+
+.customer strong {
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.customer span {
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+.orders-table td:nth-child(3) {
+    color: #555;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.order-price {
+    color: #111 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   PAYMENT
+   BLACK & WHITE
+========================================= */
+
+.payment {
+    display: inline-block;
+
+    min-width: 60px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #d5d5d5;
+
+    background: #f7f7f7;
+
+    color: #444;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* PAID */
+
+.payment.paid {
+    border-color: #111;
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+/* PENDING */
+
+.payment.pending {
+    border-color: #111;
+
+    background: #fff;
+
+    color: #111;
+}
+
+
+/* FAILED */
+
+.payment.failed {
+    border-color: #777;
+
+    background: #fff;
+
+    color: #555;
+}
+
+
+/* =========================================
+   ORDER STATUS
+========================================= */
+
+.status {
+    display: inline-block;
+
+    min-width: 80px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #d5d5d5;
+
+    background: #f7f7f7;
+
+    color: #444;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* DELIVERED */
+
+.status.delivered {
+    border-color: #111;
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+/* SHIPPED */
+
+.status.shipped {
+    border-color: #111;
+
+    background: #fff;
+
+    color: #111;
+}
+
+
+/* PROCESSING */
+
+.status.processing {
+    border-color: #777;
+
+    background: #fff;
+
+    color: #555;
+}
+
+
+/* CANCELLED */
+
+.status.cancelled {
+    border-color: #111;
+
+    background: #f7f7f7;
+
+    color: #111;
+}
+
+
+/* =========================================
+   ORDER ACTIONS
+========================================= */
+
+.order-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================
+   COMMON ACTION BUTTON
+========================================= */
+
+.order-actions button {
+    min-width: 65px;
+
+    padding: 9px 12px;
+
+    border: 1px solid #111;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit-order-btn {
+    background: #111;
+
+    color: #fff;
+}
+
+.edit-order-btn:hover {
+    background: #fff;
+
+    color: #111;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-order-btn {
+    border-color: #ccc !important;
+
+    background: #fff;
+
+    color: #333;
+}
+
+.delete-order-btn:hover {
+    border-color: #111 !important;
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   TABLE SCROLLBAR
+========================================= */
+
+.orders-table-wrapper::-webkit-scrollbar {
+    height: 5px;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-thumb {
+    background: #111;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .admin-orders-page {
+        padding: 40px 4%;
+    }
+
+    .orders-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-orders-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .orders-export-btn {
+        align-self: flex-end;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .admin-orders-page {
+        padding: 30px 15px;
+    }
+
+    .admin-orders-header {
+        margin-bottom: 25px;
+    }
+
+    .admin-orders-header h1 {
+        font-size: 20px;
+
+        letter-spacing: 1px;
+    }
+
+    .admin-orders-header p {
+        font-size: 10px;
+    }
+
+    .orders-export-btn {
+        width: 100%;
+    }
+
+    .orders-stats {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 25px;
+    }
+
+    .orders-stat-card {
+        min-height: 80px;
+
+        padding: 20px;
+    }
+
+    .orders-stat-card h2 {
+        font-size: 24px;
+    }
+
+    .orders-table th {
+        padding: 14px;
+    }
+
+    .orders-table td {
+        padding: 15px 14px;
+    }
+
+    .order-actions {
+        flex-direction: row;
+    }
+
+    .order-actions button {
+        min-width: 60px;
+
+        padding: 8px 10px;
+    }
+}

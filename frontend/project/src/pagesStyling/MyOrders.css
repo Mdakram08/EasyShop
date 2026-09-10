@@ -1,0 +1,469 @@
+.no-orders {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px solid #ddd;
+
+  margin-top: 30px;
+
+  padding: 50px 20px;
+}
+
+.no-orders-icon {
+  font-size: 45px;
+
+  margin-bottom: 20px;
+}
+
+.no-orders h2 {
+  font-size: 25px;
+
+  font-weight: 400;
+
+  margin: 0 0 10px;
+
+  text-transform: uppercase;
+}
+
+.no-orders p {
+  color: #777;
+
+  font-size: 13px;
+
+  margin-bottom: 30px;
+}
+
+.no-orders .single-view-btn {
+  width: 180px;
+}.orders-page {
+  min-height: 70vh;
+  background: #fff;
+  color: #111;
+  padding: 60px 0 100px;
+}
+
+.orders-container {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.orders-header h1 {
+  margin: 10px 0 0;
+
+  font-size: 38px;
+  font-weight: 400;
+
+  letter-spacing: -1px;
+}
+
+.orders-count {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #666;
+}
+
+
+/* =========================
+   SINGLE ORDER
+========================= */
+
+.single-order {
+  margin-top: 30px;
+
+  border: 1px solid #ddd;
+
+  background: #fff;
+}
+
+
+/* =========================
+   ORDER HEADER
+========================= */
+
+.single-order-header {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr auto;
+
+  align-items: center;
+
+  padding: 20px 25px;
+
+  background: #fafafa;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.single-order-header div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.single-order-header span {
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #777;
+}
+
+.single-order-header strong {
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  padding: 8px 14px;
+
+  font-size: 10px !important;
+
+  letter-spacing: 1px !important;
+
+  border: 1px solid #111;
+
+  color: #111 !important;
+
+  background: #fff;
+}
+
+.status.delivered {
+  background: #111;
+  color: #fff !important;
+}
+
+.status.processing {
+  background: #fff;
+}
+
+.status.shipped {
+  background: #eee;
+}
+
+
+/* =========================
+   ORDER BODY
+========================= */
+
+.single-order-body {
+  display: grid;
+
+  grid-template-columns: 190px 1fr 220px;
+
+  gap: 35px;
+
+  padding: 30px;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.single-product-image {
+  width: 190px;
+  height: 240px;
+
+  overflow: hidden;
+
+  background: #f5f5f5;
+}
+
+.single-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.single-product-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.single-product-info {
+  padding-top: 5px;
+}
+
+.product-category {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #777;
+}
+
+.single-product-info h2 {
+  margin: 0 0 18px;
+
+  font-size: 19px;
+
+  font-weight: 400;
+
+  text-transform: uppercase;
+}
+
+.single-product-info p {
+  margin: 7px 0;
+
+  font-size: 12px;
+
+  color: #666;
+}
+
+.single-product-price {
+  display: block;
+
+  margin-top: 22px;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   ORDER DETAILS
+========================= */
+
+.single-order-details {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  border-left: 1px solid #ddd;
+
+  padding-left: 30px;
+}
+
+.single-order-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.single-order-details span {
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: #777;
+}
+
+.single-order-details strong {
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.single-view-btn {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 14px 10px;
+
+  background: #111;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  transition: 0.25s ease;
+}
+
+.single-view-btn:hover {
+  background: #333;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+  .single-order-body {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .single-product-image {
+    width: 150px;
+    height: 200px;
+  }
+
+  .single-order-details {
+    grid-column: 1 / -1;
+
+    border-left: none;
+
+    border-top: 1px solid #ddd;
+
+    padding-left: 0;
+    padding-top: 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr auto;
+
+    align-items: center;
+  }
+
+  .single-view-btn {
+    width: 150px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .orders-page {
+    padding: 35px 0 70px;
+  }
+
+  .orders-container {
+    width: 94%;
+  }
+
+  .orders-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .orders-header h1 {
+    font-size: 30px;
+  }
+
+  .single-order-header {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .single-order-body {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px;
+
+    gap: 25px;
+  }
+
+  .single-product-image {
+    width: 100%;
+    height: 380px;
+  }
+
+  .single-product-info h2 {
+    font-size: 17px;
+  }
+
+  .single-order-details {
+    display: flex;
+
+    border-left: none;
+
+    border-top: 1px solid #ddd;
+
+    padding: 25px 0 0;
+
+    gap: 20px;
+  }
+
+  .single-view-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .single-product-image {
+    height: 300px;
+  }
+
+  .single-product-info h2 {
+    font-size: 15px;
+  }
+
+}

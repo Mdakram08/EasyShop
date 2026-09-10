@@ -1,0 +1,159 @@
+/* Shipping.css */
+
+.shipping-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.shipping-container {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  padding: 45px;
+  border: 1px solid #e8e8e8;
+}
+
+.shipping-container h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #111;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.shipping-container p {
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 35px;
+}
+
+.shipping-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.25s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #111;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+.two-inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.two-inputs .input-group {
+  flex: 1;
+}
+
+.shipping-btn {
+  width: 100%;
+  height: 55px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.shipping-btn:hover {
+  color: black;
+  background: #f6f6f6;
+}
+
+.input-group select {
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .shipping-page {
+    padding: 40px 15px;
+  }
+
+  .shipping-container {
+    padding: 30px 20px;
+  }
+
+  .shipping-container h2 {
+    font-size: 1.7rem;
+  }
+
+  .two-inputs {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .shipping-btn {
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shipping-container {
+    padding: 25px 15px;
+  }
+
+  .shipping-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .shipping-container p {
+    font-size: 0.9rem;
+  }
+
+  .input-group input,
+  .input-group select {
+    height: 48px;
+    font-size: 0.9rem;
+  }
+
+  .shipping-btn {
+    height: 48px;
+    font-size: 0.9rem;
+  }
+}
