@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar.jsx"
-import PageTitle from "../components/PageTitle.jsx"
+import PageTitle from "../components/pageTitle.jsx"
 import Footer from "../components/Footer.jsx"
 import "./UpdateProducts.css"
 import { toast } from "react-toastify";
