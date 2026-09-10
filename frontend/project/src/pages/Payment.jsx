@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../components/pageTitle";
 import CheckoutSteps from "./CheckoutSteps";
 import "../pagesStyling/Payment.css";
 import { data, useNavigate } from "react-router-dom";
