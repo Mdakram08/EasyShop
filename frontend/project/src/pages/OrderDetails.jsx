@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../components/pageTitle";
 import "../pagesStyling/OrderDetails.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleorder, removeError } from "../features/orderSlice";
