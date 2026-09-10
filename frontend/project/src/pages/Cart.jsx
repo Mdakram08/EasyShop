@@ -2,7 +2,7 @@ import React from "react";
 import "../pagesStyling/Cart.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../components/pageTitle";
 import { FaTrashAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
