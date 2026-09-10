@@ -7,7 +7,7 @@ import "../componentsStyling/ImageSlider.css"
 // Array containing image paths
 // Images should be stored inside public/images folder
 const images = [
-  "/download.jpg",
+  "/b3.jpg",
   "/b.jpg",
   "/c.jpg",
   "/b3.jpg"
