@@ -1,109 +1,479 @@
-.payment-page{
-    width:90%;
-    max-width:1300px;
-    margin:40px auto;
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:40px;
+/* =========================================
+   PAYMENT PAGE
+   ========================================= */
+
+.payment-page {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    gap: 40px;
+    box-sizing: border-box;
 }
 
+/* =========================================
+   PAYMENT SECTIONS
+   ========================================= */
+
 .payment-left,
-.payment-right{
-    background:#fff;
-    border:1px solid #e5e5e5;
-    border-radius:10px;
-    padding:30px;
+.payment-right {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .payment-left h2,
-.payment-right h2{
-    margin-bottom:25px;
+.payment-right h2 {
+    margin: 0 0 25px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
 }
 
-.input-group{
-    display:flex;
-    flex-direction:column;
-    margin-bottom:20px;
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    min-width: 0;
 }
 
-.input-group label{
-    margin-bottom:8px;
-    font-weight:500;
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
 }
 
-.input-group input{
-    padding:14px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:15px;
+.input-group input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #111;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
 }
 
-.payment-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+.input-group input:focus {
+    border-color: #111;
 }
 
-.payment-right{
-    height:fit-content;
-    position:sticky;
-    top:100px;
+.input-group input::placeholder {
+    color: #999;
 }
 
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    margin:18px 0;
+/* =========================================
+   PAYMENT ROW
+   ========================================= */
+
+.payment-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
 }
 
-.total{
-    border-top:1px solid #ddd;
-    padding-top:18px;
-    font-size:20px;
-    font-weight:600;
+/* =========================================
+   PAYMENT SUMMARY
+   ========================================= */
+
+.payment-right {
+    height: fit-content;
+    position: sticky;
+    top: 100px;
 }
 
-.pay-btn{
-    width:100%;
-    margin-top:25px;
-    padding:15px;
-    background:#000;
-    color:#fff;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
-    border-radius:6px;
-}
-.go-back{
-    background-color: white;
-    color: black;
-    border:  1px solid black;
-    width:100%;
-    margin-top:25px;
-    padding:15px;
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 18px 0;
+    font-size: 16px;
+    color: #444;
 }
 
-.go-back:hover{
-    background-color: black;
-    color: white;
+.summary-row span:last-child {
+    color: #111;
+    white-space: nowrap;
 }
 
-.pay-btn:hover{
-    background:#333;
+.total {
+    border-top: 1px solid #ddd;
+    padding-top: 18px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
 }
 
-@media(max-width:900px){
+/* =========================================
+   PAY BUTTON
+   ========================================= */
 
-.payment-page{
-    grid-template-columns:1fr;
+.pay-btn {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.25s ease,
+                transform 0.2s ease;
+    box-sizing: border-box;
 }
 
-.payment-right{
-    position:static;
+.pay-btn:hover {
+    background: #333;
 }
 
-.payment-row{
-    grid-template-columns:1fr;
+.pay-btn:active {
+    transform: scale(0.99);
 }
 
+.pay-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   GO BACK BUTTON
+   ========================================= */
+
+.go-back {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.2s ease;
+}
+
+.go-back:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.go-back:active {
+    transform: scale(0.99);
+}
+
+/* =========================================
+   LARGE TABLET
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    .payment-page {
+        width: 92%;
+        gap: 30px;
+    }
+
+    .payment-left,
+    .payment-right {
+        padding: 25px;
+    }
+
+    .payment-left h2,
+    .payment-right h2 {
+        font-size: 22px;
+    }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .payment-page {
+        width: 94%;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 30px auto;
+    }
+
+    .payment-right {
+        position: static;
+    }
+
+    .payment-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================
+   SMALL TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .payment-page {
+        width: 94%;
+        gap: 20px;
+        margin: 25px auto;
+    }
+
+    .payment-left,
+    .payment-right {
+        padding: 22px;
+        border-radius: 8px;
+    }
+
+    .payment-left h2,
+    .payment-right h2 {
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+
+    .input-group {
+        margin-bottom: 17px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+    }
+
+    .input-group input {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .summary-row {
+        font-size: 15px;
+        margin: 15px 0;
+    }
+
+    .total {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .payment-page {
+        width: 95%;
+        margin: 20px auto;
+        gap: 18px;
+    }
+
+    .payment-left,
+    .payment-right {
+        padding: 17px;
+        border-radius: 7px;
+    }
+
+    .payment-left h2,
+    .payment-right h2 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .payment-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .input-group {
+        margin-bottom: 16px;
+    }
+
+    .input-group label {
+        margin-bottom: 7px;
+        font-size: 13px;
+    }
+
+    .input-group input {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    .summary-row {
+        font-size: 14px;
+        margin: 14px 0;
+        gap: 12px;
+    }
+
+    .total {
+        padding-top: 16px;
+        margin-top: 17px;
+        font-size: 18px;
+    }
+
+    .pay-btn,
+    .go-back {
+        min-height: 48px;
+        margin-top: 20px;
+        padding: 13px 15px;
+        font-size: 15px;
+    }
+
+    .go-back {
+        margin-top: 15px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .payment-page {
+        width: 96%;
+        margin: 15px auto;
+    }
+
+    .payment-left,
+    .payment-right {
+        padding: 14px;
+    }
+
+    .payment-left h2,
+    .payment-right h2 {
+        font-size: 18px;
+    }
+
+    .input-group label {
+        font-size: 12px;
+    }
+
+    .input-group input {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .summary-row {
+        font-size: 13px;
+    }
+
+    .total {
+        font-size: 17px;
+    }
+
+    .pay-btn,
+    .go-back {
+        min-height: 46px;
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .payment-page {
+        width: 96%;
+        margin: 12px auto;
+        gap: 14px;
+    }
+
+    .payment-left,
+    .payment-right {
+        padding: 12px;
+    }
+
+    .payment-left h2,
+    .payment-right h2 {
+        font-size: 17px;
+    }
+
+    .input-group {
+        margin-bottom: 14px;
+    }
+
+    .input-group label {
+        font-size: 11px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .summary-row {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .total {
+        font-size: 16px;
+    }
+
+    .pay-btn,
+    .go-back {
+        min-height: 44px;
+        font-size: 13px;
+        padding: 11px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+@media (hover: none) {
+
+    .pay-btn:hover {
+        background: #000;
+    }
+
+    .go-back:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .pay-btn:active {
+        background: #333;
+    }
+
+    .go-back:active {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .input-group input,
+    .pay-btn,
+    .go-back {
+        transition: none;
+    }
 }

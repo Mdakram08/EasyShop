@@ -1,182 +1,741 @@
+
+/* =========================================
+   EasyShop Web Navbar
+   H&M / ZARA INSPIRED RESPONSIVE THEME
+========================================= */
+
 .web-navbar {
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+
+    background: #fff;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    z-index: 1000;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
 }
 
-.web-nav-container {
-  max-width: 1400px;
-  margin: auto;
-  padding: 18px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative; /* ← CRITICAL: anchors the dropdown */
+.web-navbar *,
+.web-navbar *::before,
+.web-navbar *::after {
+    box-sizing: border-box;
 }
-.web-profile-image {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.web-nav-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 1400px;
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    padding: 16px 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.web-logo {
+    flex: 0 0 auto;
 }
 
 .web-logo a {
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #000;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    display: inline-block;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
 }
 
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.web-profile-image {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    flex: 0 0 auto;
+}
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
 .web-search-box {
-  display: flex;
-  width: 35%;
+    display: flex;
+
+    width: 35%;
+    min-width: 220px;
+
+    margin: 0 auto;
 }
 
 .web-search-box input {
-  flex: 1;
-  padding: 12px 15px;
-  border: 1px solid #dcdcdc;
-  border-right: none;
-  outline: none;
-  font-size: 14px;
+    flex: 1;
+
+    width: 100%;
+    min-width: 0;
+
+    height: 42px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dcdcdc;
+    border-right: none;
+
+    outline: none;
+
+    background: #fff;
+    color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    transition: border-color 0.2s ease;
 }
 
+.web-search-box input:focus {
+    border-color: #111;
+}
+
+.web-search-box input::placeholder {
+    color: #888;
+}
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
 .web-search-box button {
-  padding: 0 18px;
-  border: 1px solid #dcdcdc;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.3s;
+    flex: 0 0 auto;
+
+    min-width: 48px;
+
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: 1px solid #dcdcdc;
+
+    background: #fff;
+
+    color: #111;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
 }
 
 .web-search-box button:hover {
-  background: #f5f5f5;
+    background: #f5f5f5;
 }
 
+/* =========================================
+   NAV LINKS
+========================================= */
+
 .web-nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    flex: 0 0 auto;
 }
 
 .web-nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: 0.3s;
+    position: relative;
+
+    display: inline-block;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
 }
 
 .web-nav-links a:hover {
-  color: #777;
+    color: #777;
 }
 
+/* =========================================
+   NAV ICONS
+========================================= */
+
 .web-nav-icons {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex: 0 0 auto;
 }
 
 .web-nav-icons a {
-  color: #111;
-  font-size: 20px;
-  position: relative;
-  transition: 0.3s;
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #111;
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
 }
 
 .web-nav-icons a:hover {
-  color: #777;
+    color: #777;
 }
+
+/* =========================================
+   CART
+========================================= */
 
 .web-cart-icon {
-  position: relative;
+    position: relative;
 }
+
+/* =========================================
+   CART COUNT
+========================================= */
 
 .web-cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #000;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 600;
+    position: absolute;
+
+    top: -8px;
+    right: -10px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #000;
+    color: #fff;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    pointer-events: none;
 }
+
+/* =========================================
+   MOBILE MENU TOGGLE
+========================================= */
 
 .web-menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #111;
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    color: #111;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
 }
 
-/* ── Mobile ── */
+/* =========================================
+   LARGE DESKTOP
+========================================= */
 
-@media (max-width: 768px) {
-  .web-nav-container {
-    flex-wrap: wrap;
-    padding: 14px 20px;
-    gap: 10px;
-  }
+@media (min-width: 1400px) {
 
-  .web-menu-toggle {
-    display: block;
-  }
+    .web-nav-container {
+        min-height: 76px;
 
-  .web-search-box {
-    width: 100%;
-    order: 3;
-    margin-top: 4px;
-  }
+        padding-left: 45px;
+        padding-right: 45px;
 
-  /* Hidden by default on mobile */
-  .web-nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;       /* anchors to bottom of .nav-container */
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    gap: 0;
-    border-top: 1px solid #eee;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    z-index: 999;
-  }
+        gap: 35px;
+    }
 
-  .web-nav-links li a {
-    display: block;
-    padding: 14px 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
+    .web-logo a {
+        font-size: 2.1rem;
+    }
 
-  .web-nav-links li:last-child a {
-    border-bottom: none;
-  }
+    .web-search-box {
+        width: 36%;
+    }
 
-  /* Shown when toggle is active */
-  .web-nav-links.active {
-    display: flex; /* ← override display:none */
-  }
+    .web-nav-links {
+        gap: 32px;
+    }
+}
 
-  .web-nav-icons {
-    gap: 15px;
-  }
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .web-nav-container {
+        padding: 15px 28px;
+
+        gap: 20px;
+    }
+
+    .web-logo a {
+        font-size: 1.8rem;
+    }
+
+    .web-search-box {
+        width: 30%;
+        min-width: 190px;
+    }
+
+    .web-nav-links {
+        gap: 20px;
+    }
+
+    .web-nav-links a {
+        font-size: 12px;
+    }
+
+    .web-nav-icons {
+        gap: 16px;
+    }
+
+    .web-nav-icons a {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   TABLET / MOBILE NAV
+========================================= */
+
+@media (max-width: 900px) {
+
+    .web-nav-container {
+        min-height: 64px;
+
+        padding: 12px 20px;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+    }
+
+    .web-logo {
+        order: 1;
+    }
+
+    .web-logo a {
+        font-size: 1.7rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .web-menu-toggle {
+        display: flex;
+
+        order: 2;
+
+        margin-left: auto;
+    }
+
+    .web-nav-icons {
+        order: 3;
+
+        gap: 15px;
+    }
+
+    .web-nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 8px 0;
+
+        background: #fff;
+
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #e5e5e5;
+
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+
+        z-index: 999;
+    }
+
+    /* Shown when toggle is active */
+    .web-nav-links.active {
+        display: flex;
+    }
+
+    .web-nav-links li {
+        width: 100%;
+    }
+
+    .web-nav-links li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        border-bottom: 1px solid #f0f0f0;
+
+        text-align: center;
+
+        font-size: 12px;
+    }
+
+    .web-nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .web-search-box {
+        order: 4;
+
+        width: 100%;
+
+        min-width: 0;
+
+        margin: 2px 0 0;
+    }
+
+    .web-search-box input,
+    .web-search-box button {
+        height: 40px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .web-nav-container {
+        padding: 11px 15px;
+
+        gap: 9px;
+    }
+
+    .web-logo a {
+        font-size: 1.45rem;
+
+        letter-spacing: 1.2px;
+    }
+
+    .web-profile-image {
+        width: 28px;
+        height: 28px;
+    }
+
+    .web-menu-toggle {
+        width: 32px;
+        height: 32px;
+
+        font-size: 1.35rem;
+    }
+
+    .web-nav-icons {
+        gap: 12px;
+    }
+
+    .web-nav-icons a {
+        font-size: 18px;
+    }
+
+    .web-cart-count {
+        width: 16px;
+        height: 16px;
+
+        top: -7px;
+        right: -8px;
+
+        font-size: 9px;
+    }
+
+    .web-search-box {
+        width: 100%;
+
+        margin-top: 3px;
+    }
+
+    .web-search-box input {
+        height: 38px;
+
+        padding: 0 12px;
+
+        font-size: 12px;
+    }
+
+    .web-search-box button {
+        min-width: 44px;
+
+        height: 38px;
+
+        padding: 0 14px;
+    }
+
+    .web-nav-links {
+        padding: 5px 0;
+    }
+
+    .web-nav-links li a {
+        padding: 13px 15px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.6px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .web-nav-container {
+        padding: 10px 11px;
+
+        gap: 7px;
+    }
+
+    .web-logo a {
+        font-size: 1.25rem;
+
+        letter-spacing: 1px;
+    }
+
+    .web-menu-toggle {
+        width: 29px;
+        height: 29px;
+
+        font-size: 1.2rem;
+    }
+
+    .web-profile-image {
+        width: 26px;
+        height: 26px;
+    }
+
+    .web-nav-icons {
+        gap: 9px;
+    }
+
+    .web-nav-icons a {
+        font-size: 17px;
+    }
+
+    .web-cart-count {
+        width: 15px;
+        height: 15px;
+
+        top: -6px;
+        right: -7px;
+
+        font-size: 8px;
+    }
+
+    .web-search-box input {
+        height: 36px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    .web-search-box button {
+        min-width: 40px;
+
+        height: 36px;
+
+        padding: 0 11px;
+    }
+
+    .web-nav-links li a {
+        padding: 12px 10px;
+
+        font-size: 10px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 340px) {
+
+    .web-nav-container {
+        padding: 9px 8px;
+
+        gap: 6px;
+    }
+
+    .web-logo a {
+        font-size: 1.1rem;
+
+        letter-spacing: 0.8px;
+    }
+
+    .web-menu-toggle {
+        width: 27px;
+        height: 27px;
+
+        font-size: 1.1rem;
+    }
+
+    .web-profile-image {
+        width: 24px;
+        height: 24px;
+    }
+
+    .web-nav-icons {
+        gap: 7px;
+    }
+
+    .web-nav-icons a {
+        font-size: 16px;
+    }
+
+    .web-search-box input {
+        height: 34px;
+
+        font-size: 10px;
+    }
+
+    .web-search-box button {
+        min-width: 37px;
+
+        height: 34px;
+
+        padding: 0 9px;
+    }
+
+    .web-nav-links li a {
+        padding: 11px 8px;
+
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   Prevent hover effects from sticking
+========================================= */
+
+@media (hover: none) {
+
+    .web-search-box button:hover {
+        background: #fff;
+    }
+
+    .web-nav-links a:hover {
+        color: #111;
+    }
+
+    .web-nav-icons a:hover {
+        color: #111;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .web-search-box input,
+    .web-search-box button,
+    .web-nav-links a,
+    .web-nav-icons a {
+        transition: none;
+    }
 }

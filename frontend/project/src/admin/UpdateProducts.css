@@ -1,15 +1,23 @@
 
 /* =========================================
    UPDATE PRODUCTS PAGE
-   H&M / ZARA INSPIRED DESIGN
+   H&M / ZARA INSPIRED RESPONSIVE DESIGN
 ========================================= */
 
 .create-product-container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 50px auto 80px;
-  padding: 0 30px;
-  box-sizing: border-box;
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 50px auto 80px;
+    padding: 0 30px;
+
+    box-sizing: border-box;
+}
+
+.create-product-container *,
+.create-product-container *::before,
+.create-product-container *::after {
+    box-sizing: border-box;
 }
 
 /* =========================================
@@ -17,13 +25,20 @@
 ========================================= */
 
 .form-title {
-  font-size: 32px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 45px;
-  color: #111;
+    width: 100%;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.3;
+
+    text-align: center;
+
+    margin: 0 0 45px;
+
+    color: #111;
 }
 
 /* =========================================
@@ -31,11 +46,13 @@
 ========================================= */
 
 .product-form {
-  width: 100%;
-  max-width: 850px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* =========================================
@@ -43,13 +60,17 @@
 ========================================= */
 
 .product-form label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #222;
-  margin-bottom: 9px;
-  margin-top: 22px;
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+
+    color: #222;
+
+    margin-top: 22px;
+    margin-bottom: 9px;
 }
 
 /* =========================================
@@ -57,28 +78,31 @@
 ========================================= */
 
 .form-input {
-  width: 100%;
-  height: 50px;
-  padding: 0 15px;
-  box-sizing: border-box;
+    width: 100%;
+    height: 50px;
 
-  border: 1px solid #cfcfcf;
-  background: #fff;
+    padding: 0 15px;
 
-  font-size: 14px;
-  color: #111;
+    border: 1px solid #cfcfcf;
 
-  outline: none;
-  transition: border-color 0.2s ease;
+    background: #fff;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
 }
 
 .form-input::placeholder {
-  color: #999;
-  font-size: 13px;
+    color: #999;
+    font-size: 13px;
 }
 
 .form-input:focus {
-  border-color: #111;
+    border-color: #111;
 }
 
 /* =========================================
@@ -86,11 +110,15 @@
 ========================================= */
 
 textarea.form-input {
-  height: 130px;
-  padding: 15px;
-  resize: vertical;
-  font-family: inherit;
-  line-height: 1.6;
+    min-height: 130px;
+    height: 130px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    font-family: inherit;
+    line-height: 1.6;
 }
 
 /* =========================================
@@ -98,24 +126,29 @@ textarea.form-input {
 ========================================= */
 
 .form-select {
-  width: 100%;
-  height: 50px;
-  padding: 0 15px;
+    width: 100%;
+    height: 50px;
 
-  border: 1px solid #cfcfcf;
-  background: #fff;
+    padding: 0 15px;
 
-  font-size: 14px;
-  color: #111;
+    border: 1px solid #cfcfcf;
 
-  outline: none;
-  cursor: pointer;
+    border-radius: 0;
 
-  transition: border-color 0.2s ease;
+    background: #fff;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    cursor: pointer;
+
+    transition: border-color 0.2s ease;
 }
 
 .form-select:focus {
-  border-color: #111;
+    border-color: #111;
 }
 
 /* =========================================
@@ -123,25 +156,58 @@ textarea.form-input {
 ========================================= */
 
 .form-input-container {
-  width: 100%;
-  height: 55px;
-  border: 1px solid #cfcfcf;
-  background: #fafafa;
+    width: 100%;
+    min-height: 55px;
+    height: 55px;
 
-  display: flex;
-  align-items: center;
+    border: 1px solid #cfcfcf;
 
-  box-sizing: border-box;
+    background: #fafafa;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
 }
 
 .form-input-image {
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 
-  font-size: 13px;
-  cursor: pointer;
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   FILE UPLOAD BUTTON
+========================================= */
+
+.form-input-image::file-selector-button {
+    height: 32px;
+
+    margin-right: 12px;
+    padding: 0 14px;
+
+    border: 1px solid #111;
+
+    background: #111;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
 }
 
 /* =========================================
@@ -149,29 +215,34 @@ textarea.form-input {
 ========================================= */
 
 .update-product-preview-wrapper {
-  width: 100%;
-  margin-top: 20px;
+    width: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
 }
 
 .update-product-preview-image {
-  width: 100%;
-  height: 240px;
+    width: 100%;
+    height: 240px;
 
-  object-fit: cover;
-  display: block;
+    object-fit: cover;
 
-  border: 1px solid #ddd;
-  background: #f5f5f5;
+    display: block;
 
-  transition: opacity 0.2s ease;
+    border: 1px solid #ddd;
+
+    background: #f5f5f5;
+
+    transition: opacity 0.2s ease;
 }
 
 .update-product-preview-image:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
 /* =========================================
@@ -179,29 +250,34 @@ textarea.form-input {
 ========================================= */
 
 .image-review-container {
-  width: 100%;
-  margin-top: 30px;
+    width: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
 }
 
 .image-preview {
-  width: 100%;
-  height: 240px;
+    width: 100%;
+    height: 240px;
 
-  object-fit: cover;
-  display: block;
+    object-fit: cover;
 
-  border: 1px solid #ddd;
-  background: #f5f5f5;
+    display: block;
 
-  transition: opacity 0.2s ease;
+    border: 1px solid #ddd;
+
+    background: #f5f5f5;
+
+    transition: opacity 0.2s ease;
 }
 
 .image-preview:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
 /* =========================================
@@ -209,126 +285,417 @@ textarea.form-input {
 ========================================= */
 
 .submit-btn {
-  width: 100%;
-  height: 55px;
+    width: 100%;
+    height: 55px;
 
-  margin-top: 40px;
+    margin-top: 40px;
 
-  border: none;
-  background: #111;
-  color: #fff;
+    border: 1px solid #111;
+    border-radius: 0;
 
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+    background: #111;
+    color: #fff;
 
-  cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
 
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .submit-btn:hover {
-  background: #333;
+    background: #333;
 }
 
 .submit-btn:active {
-  transform: scale(0.99);
+    transform: scale(0.99);
 }
 
 /* =========================================
-   RESPONSIVE DESIGN
+   LARGE DESKTOP
 ========================================= */
 
-/* Tablets */
+@media (min-width: 1400px) {
+
+    .create-product-container {
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+
+    .product-form {
+        max-width: 900px;
+    }
+
+    .form-title {
+        font-size: 34px;
+    }
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        gap: 18px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        height: 250px;
+    }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .create-product-container {
+        padding: 0 5%;
+    }
+
+    .product-form {
+        max-width: 850px;
+    }
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        gap: 14px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        height: 220px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 900px) {
 
-  .create-product-container {
-    margin-top: 35px;
-    padding: 0 25px;
-  }
+    .create-product-container {
+        margin-top: 35px;
+        margin-bottom: 65px;
 
-  .form-title {
-    font-size: 28px;
-  }
+        padding: 0 25px;
+    }
 
-  .update-product-preview-wrapper,
-  .image-review-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .form-title {
+        font-size: 28px;
+        letter-spacing: 1.7px;
 
-  .update-product-preview-image,
-  .image-preview {
-    height: 220px;
-  }
+        margin-bottom: 38px;
+    }
+
+    .product-form label {
+        font-size: 11px;
+        margin-top: 20px;
+    }
+
+    .form-input,
+    .form-select {
+        height: 49px;
+    }
+
+    textarea.form-input {
+        height: 125px;
+    }
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        height: 210px;
+    }
+
+    .submit-btn {
+        height: 53px;
+        margin-top: 35px;
+    }
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 600px) {
 
-  .create-product-container {
-    margin: 30px auto 60px;
-    padding: 0 18px;
-  }
+    .create-product-container {
+        width: 100%;
 
-  .form-title {
-    font-size: 23px;
-    letter-spacing: 1.5px;
-    margin-bottom: 30px;
-  }
+        margin: 30px auto 60px;
 
-  .product-form label {
-    font-size: 11px;
-    margin-top: 18px;
-  }
+        padding: 0 18px;
+    }
 
-  .form-input,
-  .form-select {
-    height: 48px;
-  }
+    .form-title {
+        font-size: 23px;
+        letter-spacing: 1.5px;
+        line-height: 1.3;
 
-  textarea.form-input {
-    height: 120px;
-  }
+        margin-bottom: 30px;
+    }
 
-  .update-product-preview-wrapper,
-  .image-review-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
+    .product-form label {
+        font-size: 10px;
+        letter-spacing: 1px;
 
-  .update-product-preview-image,
-  .image-preview {
-    height: 190px;
-  }
+        margin-top: 18px;
+        margin-bottom: 8px;
+    }
 
-  .submit-btn {
-    height: 52px;
-    margin-top: 30px;
-  }
+    .form-input,
+    .form-select {
+        height: 48px;
+
+        padding: 0 13px;
+
+        font-size: 13px;
+    }
+
+    .form-input::placeholder {
+        font-size: 12px;
+    }
+
+    textarea.form-input {
+        height: 120px;
+        min-height: 120px;
+
+        padding: 13px;
+
+        line-height: 1.5;
+    }
+
+    /* IMAGE UPLOAD */
+
+    .form-input-container {
+        height: auto;
+        min-height: 52px;
+
+        overflow: visible;
+    }
+
+    .form-input-image {
+        height: auto;
+        min-height: 50px;
+
+        padding: 10px;
+
+        font-size: 11px;
+    }
+
+    .form-input-image::file-selector-button {
+        height: 30px;
+
+        margin-right: 8px;
+        padding: 0 10px;
+
+        font-size: 8px;
+    }
+
+    /* IMAGE PREVIEWS */
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-top: 16px;
+    }
+
+    .image-review-container {
+        margin-top: 22px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        width: 100%;
+        height: 185px;
+    }
+
+    /* SUBMIT */
+
+    .submit-btn {
+        height: 52px;
+
+        margin-top: 30px;
+
+        font-size: 11px;
+        letter-spacing: 1.2px;
+    }
 }
 
-/* Small phones */
+/* =========================================
+   SMALL PHONES
+========================================= */
+
 @media (max-width: 400px) {
 
-  .create-product-container {
-    padding: 0 14px;
-  }
+    .create-product-container {
+        margin-top: 25px;
+        margin-bottom: 50px;
 
-  .form-title {
-    font-size: 20px;
-  }
+        padding: 0 14px;
+    }
 
-  .update-product-preview-wrapper,
-  .image-review-container {
-    grid-template-columns: 1fr 1fr;
-  }
+    .form-title {
+        font-size: 20px;
+        letter-spacing: 1.2px;
 
-  .update-product-preview-image,
-  .image-preview {
-    height: 160px;
-  }
+        margin-bottom: 25px;
+    }
+
+    .product-form label {
+        font-size: 9px;
+        margin-top: 16px;
+    }
+
+    .form-input,
+    .form-select {
+        height: 46px;
+
+        padding: 0 11px;
+
+        font-size: 12px;
+    }
+
+    .form-input::placeholder {
+        font-size: 11px;
+    }
+
+    textarea.form-input {
+        height: 110px;
+        min-height: 110px;
+    }
+
+    .form-input-container {
+        min-height: 50px;
+    }
+
+    .form-input-image {
+        min-height: 48px;
+
+        padding: 8px;
+
+        font-size: 10px;
+    }
+
+    .form-input-image::file-selector-button {
+        height: 28px;
+
+        margin-right: 7px;
+        padding: 0 8px;
+
+        font-size: 7px;
+    }
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        height: 160px;
+    }
+
+    .submit-btn {
+        height: 50px;
+
+        margin-top: 25px;
+
+        font-size: 10px;
+    }
 }
 
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .create-product-container {
+        padding: 0 10px;
+    }
+
+    .form-title {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .product-form label {
+        font-size: 8px;
+    }
+
+    .form-input,
+    .form-select {
+        height: 44px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    textarea.form-input {
+        height: 105px;
+        min-height: 105px;
+    }
+
+    .form-input-image {
+        font-size: 9px;
+    }
+
+    .form-input-image::file-selector-button {
+        padding: 0 7px;
+        font-size: 7px;
+    }
+
+    .update-product-preview-wrapper,
+    .image-review-container {
+        gap: 7px;
+    }
+
+    .update-product-preview-image,
+    .image-preview {
+        height: 140px;
+    }
+
+    .submit-btn {
+        height: 47px;
+
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   Prevent hover effects from sticking
+========================================= */
+
+@media (hover: none) {
+
+    .update-product-preview-image:hover,
+    .image-preview:hover {
+        opacity: 1;
+    }
+
+    .submit-btn:hover {
+        background: #111;
+    }
+}

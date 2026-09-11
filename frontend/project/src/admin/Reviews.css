@@ -1,18 +1,39 @@
+
+/* =========================================
+   REVIEWS PAGE
+   H&M / ZARA INSPIRED RESPONSIVE THEME
+========================================= */
+
 .reviews-container {
-    width: 90%;
+    width: 100%;
     max-width: 1250px;
     margin: 35px auto 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* TABLE */
+.reviews-container *,
+.reviews-container *::before,
+.reviews-container *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
 
 .reviews-table {
     width: 100%;
+    min-width: 850px;
     border-collapse: collapse;
     border: 1px solid #d8d8d8;
     background: #fff;
     margin-top: 35px;
 }
+
+/* =========================================
+   TABLE HEADER
+========================================= */
 
 .reviews-table th {
     height: 55px;
@@ -24,7 +45,12 @@
     text-transform: uppercase;
     background: #111;
     color: #fff;
+    white-space: nowrap;
 }
+
+/* =========================================
+   TABLE BODY
+========================================= */
 
 .reviews-table td {
     height: 75px;
@@ -34,7 +60,35 @@
     vertical-align: middle;
 }
 
-/* IMAGE */
+.reviews-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================
+   TABLE SCROLL CONTAINER
+   If your JSX already has a wrapper around
+   the table, apply this class to it.
+========================================= */
+
+.reviews-table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 35px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+/* Remove extra margin when table is inside wrapper */
+
+.reviews-table-container .reviews-table {
+    margin-top: 0;
+}
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
 
 .product-image {
     width: 45px;
@@ -44,10 +98,13 @@
     background: #f5f5f5;
 }
 
-/* BUTTON */
+/* =========================================
+   BUTTON
+========================================= */
 
 .action-btn {
     height: 38px;
+    min-width: 75px;
     padding: 0 16px;
     border-radius: 0;
     font-size: 11px;
@@ -55,9 +112,13 @@
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
-/* VIEW */
+/* =========================================
+   VIEW BUTTON
+========================================= */
 
 .view-btn {
     background: #111;
@@ -70,7 +131,9 @@
     color: #111;
 }
 
-/* DELETE */
+/* =========================================
+   DELETE BUTTON
+========================================= */
 
 .delete-btn {
     background: #fff;
@@ -84,9 +147,12 @@
     border-color: #111;
 }
 
-/* REVIEWS DETAILS */
+/* =========================================
+   REVIEWS DETAILS
+========================================= */
 
 .reviews-details {
+    width: 100%;
     margin-top: 45px;
 }
 
@@ -98,8 +164,317 @@
     margin: 0;
     padding-bottom: 14px;
     border-bottom: 1px solid #d5d5d5;
+    line-height: 1.4;
 }
 
 .reviews-details .reviews-table {
     margin-top: 25px;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .reviews-container {
+        max-width: 1350px;
+        padding: 0 10px;
+    }
+
+    .reviews-table {
+        min-width: 900px;
+    }
+
+    .reviews-table th {
+        padding: 0 20px;
+        font-size: 12px;
+    }
+
+    .reviews-table td {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .reviews-details h2 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================
+   LAPTOP / TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .reviews-container {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .reviews-table {
+        min-width: 850px;
+    }
+
+    .reviews-table th {
+        padding: 0 16px;
+    }
+
+    .reviews-table td {
+        padding: 10px 16px;
+    }
+
+    .reviews-details {
+        margin-top: 40px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .reviews-container {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        padding: 0 4%;
+    }
+
+    .reviews-table-container {
+        margin-top: 28px;
+    }
+
+    .reviews-table {
+        min-width: 800px;
+    }
+
+    .reviews-table th {
+        height: 52px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+
+    .reviews-table td {
+        height: 70px;
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .product-image {
+        width: 42px;
+        height: 54px;
+    }
+
+    .action-btn {
+        height: 36px;
+        padding: 0 14px;
+        font-size: 10px;
+    }
+
+    .reviews-details {
+        margin-top: 38px;
+    }
+
+    .reviews-details h2 {
+        font-size: 20px;
+    }
+
+    .reviews-details .reviews-table {
+        margin-top: 22px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .reviews-container {
+        width: 100%;
+        margin: 25px auto 40px;
+        padding: 0 15px;
+    }
+
+    .reviews-table-container {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 25px;
+        overflow-x: auto;
+    }
+
+    .reviews-table {
+        width: 100%;
+        min-width: 760px;
+        margin-top: 0;
+    }
+
+    .reviews-table th {
+        height: 48px;
+        padding: 0 12px;
+        font-size: 10px;
+        letter-spacing: 0.8px;
+    }
+
+    .reviews-table td {
+        height: 65px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .product-image {
+        width: 40px;
+        height: 50px;
+    }
+
+    .action-btn {
+        height: 34px;
+        min-width: 68px;
+        padding: 0 12px;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+
+    .reviews-details {
+        margin-top: 32px;
+    }
+
+    .reviews-details h2 {
+        font-size: 18px;
+        letter-spacing: 1px;
+        padding-bottom: 12px;
+    }
+
+    .reviews-details .reviews-table {
+        margin-top: 20px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .reviews-container {
+        margin-top: 22px;
+        margin-bottom: 35px;
+        padding: 0 12px;
+    }
+
+    .reviews-table-container {
+        margin-top: 22px;
+    }
+
+    .reviews-table {
+        min-width: 720px;
+    }
+
+    .reviews-table th {
+        height: 45px;
+        padding: 0 10px;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+
+    .reviews-table td {
+        height: 60px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    .product-image {
+        width: 36px;
+        height: 46px;
+    }
+
+    .action-btn {
+        height: 32px;
+        min-width: 62px;
+        padding: 0 10px;
+        font-size: 8px;
+    }
+
+    .reviews-details {
+        margin-top: 28px;
+    }
+
+    .reviews-details h2 {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    .reviews-details .reviews-table {
+        margin-top: 18px;
+    }
+}
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .reviews-container {
+        margin-top: 18px;
+        margin-bottom: 30px;
+        padding: 0 9px;
+    }
+
+    .reviews-table {
+        min-width: 680px;
+    }
+
+    .reviews-table th {
+        height: 42px;
+        padding: 0 9px;
+        font-size: 8px;
+    }
+
+    .reviews-table td {
+        height: 56px;
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+
+    .product-image {
+        width: 33px;
+        height: 42px;
+    }
+
+    .action-btn {
+        height: 30px;
+        min-width: 58px;
+        padding: 0 8px;
+        font-size: 7px;
+    }
+
+    .reviews-details {
+        margin-top: 25px;
+    }
+
+    .reviews-details h2 {
+        font-size: 14px;
+        letter-spacing: 0.7px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   Prevent hover styles from getting stuck
+========================================= */
+
+@media (hover: none) {
+
+    .view-btn:hover {
+        background: #111;
+        color: #fff;
+    }
+
+    .delete-btn:hover {
+        background: #fff;
+        color: #111;
+        border-color: #ccc;
+    }
 }

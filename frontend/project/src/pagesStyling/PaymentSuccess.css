@@ -1,24 +1,37 @@
+/* =========================================
+   PAYMENT SUCCESS PAGE
+   ========================================= */
+
 .payment-success-page {
+    width: 100%;
     min-height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
     background: #fafafa;
+    box-sizing: border-box;
 }
+
+/* =========================================
+   SUCCESS CARD
+   ========================================= */
 
 .success-card {
     width: 100%;
     max-width: 650px;
-    background: #ffffff;
+    background: #fff;
     border: 1px solid #e5e5e5;
     padding: 45px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 }
 
-/* Success Icon */
+/* =========================================
+   SUCCESS ICON
+   ========================================= */
 
 .success-icon {
     width: 80px;
@@ -31,44 +44,57 @@
 
     border-radius: 50%;
     background: #16a34a;
-    color: white;
+    color: #fff;
 
     font-size: 45px;
+    line-height: 1;
     font-weight: bold;
 }
 
-/* Heading */
+/* =========================================
+   HEADING
+   ========================================= */
 
 .success-card h1 {
+    margin: 0 0 12px;
     font-size: 32px;
-    margin-bottom: 12px;
+    line-height: 1.2;
+    font-weight: 600;
     color: #111;
+    overflow-wrap: anywhere;
 }
 
 .success-message {
+    max-width: 520px;
+    margin: 0 auto 35px;
     color: #666;
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 35px;
 }
 
-/* Payment Details */
+/* =========================================
+   PAYMENT DETAILS
+   ========================================= */
 
 .payment-details {
+    width: 100%;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     text-align: left;
     margin-bottom: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .payment-detail-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
     padding: 16px 20px;
-    border-bottom: 1px solid #eeeeee;
-    gap: 20px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
 }
 
 .payment-detail-row:last-child {
@@ -76,46 +102,77 @@
 }
 
 .payment-detail-row span {
+    min-width: 0;
     color: #666;
+    font-size: 14px;
 }
 
 .payment-detail-row strong {
+    min-width: 0;
+    max-width: 65%;
     color: #111;
+    font-size: 14px;
+    font-weight: 600;
     text-align: right;
+    overflow-wrap: anywhere;
     word-break: break-word;
 }
 
-/* Status */
+/* =========================================
+   PAYMENT STATUS
+   ========================================= */
 
 .payment-detail-row.status strong {
     color: #16a34a;
 }
 
-/* Buttons */
+/* =========================================
+   BUTTONS
+   ========================================= */
 
 .success-actions {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 15px;
+    width: 100%;
 }
 
 .track-order-btn,
 .continue-shopping-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
     padding: 14px 25px;
+
     text-decoration: none;
     border-radius: 6px;
     font-size: 15px;
-    transition: 0.3s;
+    font-weight: 500;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
 }
+
+/* Track Order */
 
 .track-order-btn {
     background: #000;
     color: #fff;
+    border: 1px solid #000;
 }
 
 .track-order-btn:hover {
     background: #333;
 }
+
+/* Continue Shopping */
 
 .continue-shopping-btn {
     border: 1px solid #000;
@@ -128,39 +185,271 @@
     color: #fff;
 }
 
-/* Mobile */
+/* =========================================
+   LARGE TABLET
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    .payment-success-page {
+        padding: 55px 20px;
+    }
+
+    .success-card {
+        max-width: 620px;
+        padding: 40px;
+    }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .payment-success-page {
+        min-height: 60vh;
+        padding: 45px 20px;
+    }
+
+    .success-card {
+        max-width: 580px;
+        padding: 35px 30px;
+        border-radius: 9px;
+    }
+
+    .success-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+        font-size: 38px;
+    }
+
+    .success-card h1 {
+        font-size: 29px;
+    }
+
+    .success-message {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .payment-detail-row {
+        padding: 15px 18px;
+    }
+
+    .payment-detail-row span,
+    .payment-detail-row strong {
+        font-size: 13px;
+    }
+
+    .track-order-btn,
+    .continue-shopping-btn {
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
 
     .payment-success-page {
-        padding: 40px 15px;
+        min-height: auto;
+        padding: 35px 15px 50px;
+        align-items: flex-start;
     }
 
     .success-card {
+        width: 100%;
         padding: 30px 20px;
+        border-radius: 8px;
+    }
+
+    .success-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 20px;
+        font-size: 35px;
     }
 
     .success-card h1 {
         font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .success-message {
+        font-size: 14px;
+        line-height: 1.55;
+        margin-bottom: 25px;
+    }
+
+    .payment-details {
+        margin-bottom: 25px;
+        border-radius: 7px;
     }
 
     .payment-detail-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 7px;
+        padding: 14px 16px;
+    }
+
+    .payment-detail-row span,
+    .payment-detail-row strong {
+        font-size: 13px;
     }
 
     .payment-detail-row strong {
+        max-width: 100%;
         text-align: left;
     }
 
     .success-actions {
         flex-direction: column;
+        gap: 10px;
     }
 
     .track-order-btn,
     .continue-shopping-btn {
         width: 100%;
-        box-sizing: border-box;
+        min-height: 47px;
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .payment-success-page {
+        padding: 25px 12px 40px;
+    }
+
+    .success-card {
+        padding: 25px 15px;
+    }
+
+    .success-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 18px;
+        font-size: 31px;
+    }
+
+    .success-card h1 {
+        font-size: 23px;
+    }
+
+    .success-message {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .payment-detail-row {
+        padding: 13px 14px;
+    }
+
+    .payment-detail-row span,
+    .payment-detail-row strong {
+        font-size: 12px;
+    }
+
+    .track-order-btn,
+    .continue-shopping-btn {
+        min-height: 45px;
+        font-size: 13px;
+        padding: 12px 15px;
+    }
+}
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .payment-success-page {
+        padding: 20px 10px 35px;
+    }
+
+    .success-card {
+        padding: 22px 12px;
+    }
+
+    .success-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 27px;
+        margin-bottom: 15px;
+    }
+
+    .success-card h1 {
+        font-size: 21px;
+    }
+
+    .success-message {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .payment-detail-row {
+        padding: 11px 12px;
+        gap: 5px;
+    }
+
+    .payment-detail-row span,
+    .payment-detail-row strong {
+        font-size: 11px;
+    }
+
+    .track-order-btn,
+    .continue-shopping-btn {
+        min-height: 43px;
+        font-size: 12px;
+        padding: 11px 12px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+@media (hover: none) {
+
+    .track-order-btn:hover {
+        background: #000;
+    }
+
+    .continue-shopping-btn:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .track-order-btn:active {
+        background: #333;
+    }
+
+    .continue-shopping-btn:active {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .track-order-btn,
+    .continue-shopping-btn {
+        transition: none;
     }
 }

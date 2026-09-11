@@ -1,60 +1,91 @@
-/* Full Page */
+/* =========================================================
+   AUTH FORM - H&M / ZARA INSPIRED
+   Responsive • Minimal • Clean
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   FULL PAGE
+   ========================================================= */
 
 .form-container {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f8f8f8;
     padding: 40px 20px;
+    background: #f8f8f8;
 }
 
-/* Form */
+/* =========================================================
+   FORM
+   ========================================================= */
 
 .form {
-    width: 420px;
-    background: #fff;
+    width: 100%;
+    max-width: 420px;
     padding: 45px;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .form h2 {
+    margin: 0 0 10px;
     text-align: center;
     font-size: 32px;
     font-weight: 500;
+    line-height: 1.2;
     letter-spacing: 2px;
     color: #111;
-    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-/* Input Groups */
+/* =========================================================
+   INPUT GROUPS
+   ========================================================= */
 
 .input-group {
     width: 100%;
+    min-width: 0;
 }
 
 .input-group input {
     width: 100%;
+    min-width: 0;
     padding: 15px;
     font-size: 15px;
+    font-family: inherit;
+    color: #111;
+    background: #fff;
     border: 1px solid #ddd;
-    outline: none;
     border-radius: 8px;
-    transition: .3s;
-    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-group input:focus {
     border-color: #111;
+    box-shadow: 0 0 0 1px #111;
 }
 
-/* Avatar Section */
+.input-group input::placeholder {
+    color: #888;
+}
+
+/* =========================================================
+   AVATAR SECTION
+   ========================================================= */
 
 .avatar-group {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,54 +95,92 @@
 .avatar {
     width: 100px;
     height: 100px;
+    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 6px 15px rgba(0,0,0,.15);
     background: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .file-input {
     width: 100%;
+    max-width: 100%;
     cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555;
 }
 
 .file-input::-webkit-file-upload-button {
-    background: #111;
-    color: white;
-    border: none;
     padding: 10px 18px;
+    background: #111;
+    color: #fff;
+    border: none;
     border-radius: 6px;
+    font-family: inherit;
+    font-size: 12px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .file-input::-webkit-file-upload-button:hover {
     background: #333;
 }
 
-/* Button */
+/* Firefox */
+
+.file-input::file-selector-button {
+    padding: 10px 18px;
+    margin-right: 8px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   AUTH BUTTON
+   ========================================================= */
 
 .auth-btn {
     width: 100%;
-    padding: 15px;
-    background: #111;
-    color: white;
-    border: none;
-    font-size: 16px;
+    min-height: 52px;
+    padding: 14px 15px;
+    background: #111 !important;
+    color: #fff !important;
+    border: 1px solid #111 !important;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: .3s;
-    border: 1px solid black !important;
+    transition: all 0.3s ease;
 }
 
 .auth-btn:hover {
-    background: #ffffff !important;
-    color: rgb(0, 0, 0);
+    background: #fff !important;
+    color: #111 !important;
 }
 
-/* Login Link */
+.auth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   LOGIN / FORM LINKS
+   ========================================================= */
 
 .form-links {
+    width: 100%;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
 }
 
 .form-links a {
@@ -125,17 +194,236 @@
     text-decoration: underline;
 }
 
-/* Responsive */
+/* =========================================================
+   LARGE TABLETS
+   ========================================================= */
 
-@media(max-width:500px){
+@media screen and (max-width: 768px) {
 
-    .form{
-        width:100%;
-        padding:30px 20px;
+    .form-container {
+        padding: 35px 20px;
     }
 
-    .avatar{
-        width:120px;
-        height:120px;
+    .form {
+        max-width: 410px;
+        padding: 38px 32px;
+        gap: 18px;
+    }
+
+    .form h2 {
+        font-size: 29px;
+    }
+
+    .input-group input {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .avatar {
+        width: 95px;
+        height: 95px;
+    }
+
+    .auth-btn {
+        min-height: 50px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .form-container {
+        min-height: 100svh;
+        padding: 25px 15px;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 390px;
+        padding: 30px 22px;
+        border-radius: 10px;
+        gap: 17px;
+    }
+
+    .form h2 {
+        font-size: 25px;
+        letter-spacing: 1.5px;
+        margin-bottom: 7px;
+    }
+
+    .input-group input {
+        padding: 13px;
+        font-size: 13px;
+        border-radius: 7px;
+    }
+
+    .avatar-group {
+        gap: 12px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .file-input {
+        font-size: 11px;
+    }
+
+    .file-input::-webkit-file-upload-button,
+    .file-input::file-selector-button {
+        padding: 9px 13px;
+        font-size: 11px;
+    }
+
+    .auth-btn {
+        min-height: 48px;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .form-links {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .form-container {
+        padding: 20px 12px;
+    }
+
+    .form {
+        max-width: 100%;
+        padding: 27px 18px;
+        border-radius: 8px;
+        gap: 15px;
+    }
+
+    .form h2 {
+        font-size: 22px;
+        letter-spacing: 1.2px;
+    }
+
+    .input-group input {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 82px;
+        height: 82px;
+    }
+
+    .file-input {
+        font-size: 10px;
+    }
+
+    .file-input::-webkit-file-upload-button,
+    .file-input::file-selector-button {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .auth-btn {
+        min-height: 46px;
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .form-links {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 360px) {
+
+    .form-container {
+        padding: 15px 10px;
+    }
+
+    .form {
+        padding: 23px 15px;
+        gap: 13px;
+    }
+
+    .form h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .input-group input {
+        padding: 11px;
+        font-size: 11px;
+    }
+
+    .avatar {
+        width: 75px;
+        height: 75px;
+    }
+
+    .file-input {
+        font-size: 9px;
+    }
+
+    .file-input::-webkit-file-upload-button,
+    .file-input::file-selector-button {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    .auth-btn {
+        min-height: 44px;
+        font-size: 11px;
+    }
+
+    .form-links {
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .file-input::-webkit-file-upload-button:hover {
+        background: #111;
+    }
+
+    .auth-btn:hover {
+        background: #111 !important;
+        color: #fff !important;
+    }
+
+    .form-links a:hover {
+        text-decoration: none;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .input-group input,
+    .file-input::-webkit-file-upload-button,
+    .auth-btn {
+        transition: none;
     }
 }

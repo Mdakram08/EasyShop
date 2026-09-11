@@ -1,130 +1,530 @@
+/* ==========================
+   PROFILE PAGE - H&M / ZARA
+   FULLY RESPONSIVE
+========================== */
 
-/* Google Font (Optional) */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap'); */
+/* ==========================
+   RESET
+========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    /* font-family:'Montserrat',sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.profile-page{
-    width:100%;
-    min-height:100vh;
-    background:#fafafa;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:70px 20px;
+/* ==========================
+   PROFILE PAGE
+========================== */
+
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #fafafa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 70px 20px;
+
+    box-sizing: border-box;
 }
 
-.profile-card{
-    width:430px;
-    background:#fff;
-    border:1px solid #e8e8e8;
-    padding:45px 35px;
-    text-align:center;
-    transition:.3s;
+/* ==========================
+   PROFILE CARD
+========================== */
+
+.profile-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: #fff;
+
+    border: 1px solid #e8e8e8;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition: box-shadow 0.3s ease;
 }
 
-.profile-card:hover{
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+.profile-card:hover {
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
 }
 
-.profile-image{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:1px solid #dcdcdc;
-    margin-bottom:25px;
+/* ==========================
+   PROFILE IMAGE
+========================== */
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid #dcdcdc;
+
+    margin-bottom: 25px;
+
+    display: inline-block;
 }
 
-.profile-card h2{
-    font-size:28px;
-    font-weight:500;
-    color:#111;
-    letter-spacing:1px;
-    margin-bottom:8px;
+/* ==========================
+   PROFILE NAME
+========================== */
+
+.profile-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    line-height: 1.25;
+
+    font-weight: 500;
+
+    color: #111;
+
+    letter-spacing: 1px;
+
+    overflow-wrap: anywhere;
 }
 
-.profile-card p{
-    font-size:15px;
-    color:#777;
-    margin-bottom:15px;
+/* ==========================
+   PROFILE EMAIL / INFO
+========================== */
+
+.profile-card p {
+    margin: 0 0 15px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #777;
+
+    overflow-wrap: anywhere;
 }
 
-.admin-badge{
-    display:inline-block;
-    margin:15px 0 30px;
-    padding:8px 20px;
-    border:1px solid #111;
-    color:#494444;
-    background:#fff;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:2px;
-    text-transform:uppercase;
+/* ==========================
+   ADMIN BADGE
+========================== */
+
+.admin-badge {
+    display: inline-block;
+
+    margin: 15px 0 30px;
+
+    padding: 8px 20px;
+
+    border: 1px solid #111;
+
+    color: #494444;
+    background: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
-.profile-buttons{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:15px;
+/* ==========================
+   PROFILE BUTTONS
+========================== */
+
+.profile-buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 15px;
 }
 
-.customize-section{
+/* ==========================
+   CUSTOMIZE SECTION
+========================== */
+
+.customize-section {
+    width: 100%;
+
     display: flex;
     flex-direction: row;
+
     gap: 10px;
+
     margin-top: 10px;
 }
 
-.profile-btn{
-    width:100%;
-    padding:15px;
-    text-decoration:none;
-    border:1px solid #111;
-    background:#fff;
-    color:#111;
-    font-size:15px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    cursor:pointer;
-    transition:.35s;
+/* ==========================
+   GENERAL BUTTON
+========================== */
+
+.profile-btn {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 15px;
+
+    text-decoration: none;
+
+    border: 1px solid #111;
+
+    background: #fff;
+    color: #111;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    line-height: 1.2;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
 }
 
-.profile-btn:hover{
-    background:#111;
-    color:#fff;
+.profile-btn:hover {
+    background: #111;
+    color: #fff;
 }
 
-.logout-btn{
-    background:#000000;
-    color:#fff;
+/* ==========================
+   LOGOUT BUTTON
+========================== */
+
+.logout-btn {
+    background: #000;
+    color: #fff;
 }
 
-.logout-btn:hover{
-    background:#fff;
-    color:#111;
+.logout-btn:hover {
+    background: #fff;
+    color: #111;
 }
 
-@media(max-width:600px){
+/* ==========================
+   LARGE TABLET
+========================== */
 
-    .profile-card{
-        width:100%;
-        padding:35px 25px;
+@media (max-width: 1000px) {
+
+    .profile-page {
+        padding: 60px 20px;
     }
 
-    .profile-image{
-        width:120px;
-        height:120px;
+    .profile-card {
+        max-width: 420px;
+        padding: 40px 32px;
     }
 
-    .profile-card h2{
-        font-size:24px;
+    .profile-image {
+        width: 140px;
+        height: 140px;
     }
 
+    .profile-card h2 {
+        font-size: 26px;
+    }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 768px) {
+
+    .profile-page {
+        min-height: 90vh;
+        padding: 50px 18px;
+    }
+
+    .profile-card {
+        max-width: 410px;
+        padding: 35px 28px;
+    }
+
+    .profile-image {
+        width: 125px;
+        height: 125px;
+
+        margin-bottom: 22px;
+    }
+
+    .profile-card h2 {
+        font-size: 24px;
+    }
+
+    .profile-card p {
+        font-size: 14px;
+    }
+
+    .admin-badge {
+        margin: 13px 0 25px;
+        padding: 8px 18px;
+
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .profile-buttons {
+        gap: 12px;
+    }
+
+    .customize-section {
+        gap: 8px;
+    }
+
+    .profile-btn {
+        min-height: 48px;
+        padding: 13px 10px;
+
+        font-size: 13px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    .profile-page {
+        min-height: auto;
+
+        padding: 40px 15px;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 22px;
+    }
+
+    .profile-image {
+        width: 115px;
+        height: 115px;
+
+        margin-bottom: 20px;
+    }
+
+    .profile-card h2 {
+        font-size: 22px;
+        letter-spacing: 0.8px;
+    }
+
+    .profile-card p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .admin-badge {
+        margin: 12px 0 22px;
+
+        padding: 7px 15px;
+
+        font-size: 11px;
+        letter-spacing: 1.3px;
+    }
+
+    .profile-buttons {
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .customize-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-btn {
+        min-height: 48px;
+
+        padding: 13px 12px;
+
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 480px) {
+
+    .profile-page {
+        padding: 30px 12px;
+    }
+
+    .profile-card {
+        padding: 27px 18px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+
+        margin-bottom: 18px;
+    }
+
+    .profile-card h2 {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+
+    .profile-card p {
+        font-size: 13px;
+    }
+
+    .admin-badge {
+        margin: 10px 0 20px;
+
+        padding: 7px 12px;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .profile-buttons {
+        gap: 9px;
+    }
+
+    .customize-section {
+        gap: 9px;
+    }
+
+    .profile-btn {
+        min-height: 46px;
+
+        padding: 12px 10px;
+
+        font-size: 11px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ==========================
+   VERY SMALL PHONES
+========================== */
+
+@media (max-width: 360px) {
+
+    .profile-page {
+        padding: 25px 10px;
+    }
+
+    .profile-card {
+        padding: 23px 14px;
+    }
+
+    .profile-image {
+        width: 88px;
+        height: 88px;
+
+        margin-bottom: 15px;
+    }
+
+    .profile-card h2 {
+        font-size: 18px;
+    }
+
+    .profile-card p {
+        font-size: 12px;
+    }
+
+    .admin-badge {
+        margin: 9px 0 17px;
+
+        padding: 6px 10px;
+
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .profile-buttons {
+        gap: 8px;
+    }
+
+    .customize-section {
+        gap: 8px;
+    }
+
+    .profile-btn {
+        min-height: 44px;
+
+        padding: 11px 8px;
+
+        font-size: 10px;
+        letter-spacing: 0.6px;
+    }
+}
+
+/* ==========================
+   TOUCH DEVICES
+========================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .profile-card:hover {
+        box-shadow: none;
+    }
+
+    .profile-btn:hover {
+        background: #fff;
+        color: #111;
+    }
+
+    .logout-btn:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    .profile-btn:active {
+        background: #111;
+        color: #fff;
+    }
+
+    .logout-btn:active {
+        background: #fff;
+        color: #111;
+    }
+}
+
+/* ==========================
+   REDUCED MOTION
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-card,
+    .profile-btn {
+        transition: none;
+    }
 }

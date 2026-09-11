@@ -1,138 +1,185 @@
+
 /* =========================================
-   PRODUCT CARD
-   H&M / ZARA INSPIRED THEME
-   ========================================= */
+   EASYSHOP PRODUCT CARD
+   H&M / ZARA INSPIRED RESPONSIVE THEME
+========================================= */
 
 .product-link {
-    text-decoration: none;
-    color: inherit;
     display: block;
-}
 
+    width: 100%;
+
+    color: inherit;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
 
 /* =========================================
    CARD
-   ========================================= */
+========================================= */
 
 .product-card {
     width: 100%;
-    background: #ffffff;
+
+    min-width: 0;
+
+    background: #fff;
+
     overflow: hidden;
-    transition: transform 0.3s ease;
+
     cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    box-sizing: border-box;
 }
 
 .product-card:hover {
     transform: translateY(-4px);
 }
 
-
 /* =========================================
    PRODUCT IMAGE
-   ========================================= */
+========================================= */
 
 .product-image-card {
+    display: block;
+
     width: 100%;
     height: 420px;
+
     object-fit: cover;
-    display: block;
+    object-position: center;
+
     background: #f5f5f3;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
     transition: transform 0.5s ease;
+
+    box-sizing: border-box;
 }
 
 .product-card:hover .product-image-card {
     transform: scale(1.025);
 }
 
-
 /* =========================================
    PRODUCT DETAILS
-   ========================================= */
+========================================= */
 
 .product-details {
-    padding: 18px 4px 25px;
-}
+    width: 100%;
 
+    padding: 18px 4px 25px;
+
+    box-sizing: border-box;
+}
 
 /* =========================================
    PRODUCT TITLE
-   ========================================= */
+========================================= */
 
 .product-title {
+    width: 100%;
+
     margin: 0 0 8px;
 
+    color: #111;
+
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 15px;
     font-weight: 400;
+
     line-height: 1.4;
 
-    color: #111111;
-
     white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
 /* =========================================
    PRICE
-   ========================================= */
+========================================= */
 
 .product-price {
     margin: 0 0 12px;
 
+    color: #111;
+
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 14px;
     font-weight: 500;
 
-    color: #111111;
+    line-height: 1.4;
 }
-
 
 /* =========================================
    RATING
-   ========================================= */
+========================================= */
 
 .rating-container {
     display: flex;
+
     align-items: center;
+
+    flex-wrap: wrap;
+
+    min-height: 18px;
 
     margin-bottom: 6px;
 }
 
-
 /* =========================================
    REVIEWS
-   ========================================= */
+========================================= */
 
 .product-review {
     margin: 0 0 16px;
 
+    color: #777;
+
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 12px;
     font-weight: 400;
 
-    color: #777777;
+    line-height: 1.5;
 }
 
-
 /* =========================================
-   VIEW BUTTON
-   ========================================= */
+   VIEW / CART BUTTON
+========================================= */
 
 .add-to-cart {
+    display: block;
+
     width: 100%;
     height: 42px;
 
-    border: 1px solid #111111;
-    background: #111111;
-    color: #ffffff;
+    padding: 0 12px;
+
+    border: 1px solid #111;
+    border-radius: 0;
+
+    outline: none;
+
+    background: #111;
+    color: #fff;
 
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 12px;
     font-weight: 500;
 
     letter-spacing: 1px;
+    line-height: 1;
+
     text-transform: uppercase;
 
     cursor: pointer;
@@ -144,23 +191,54 @@
 }
 
 .add-to-cart:hover {
-    background: #ffffff;
-    color: #111111;
+    background: #fff;
+    color: #111;
+    border-color: #111;
 }
 
+.add-to-cart:active {
+    transform: translateY(1px);
+}
 
 /* =========================================
-   TABLET
-   ========================================= */
+   LARGE DESKTOP
+========================================= */
 
-@media (max-width: 992px) {
+@media (min-width: 1400px) {
 
     .product-image-card {
-        height: 360px;
+        height: 450px;
     }
 
     .product-details {
-        padding: 15px 3px 22px;
+        padding: 20px 5px 28px;
+    }
+
+    .product-title {
+        font-size: 15px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+
+    .add-to-cart {
+        height: 44px;
+    }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .product-image-card {
+        height: 390px;
+    }
+
+    .product-details {
+        padding: 16px 3px 23px;
     }
 
     .product-title {
@@ -172,15 +250,65 @@
     }
 }
 
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .product-image-card {
+        height: 350px;
+    }
+
+    .product-details {
+        padding: 15px 3px 21px;
+    }
+
+    .product-title {
+        font-size: 14px;
+
+        margin-bottom: 7px;
+    }
+
+    .product-price {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+    }
+
+    .product-review {
+        font-size: 11px;
+
+        margin-bottom: 14px;
+    }
+
+    .add-to-cart {
+        height: 40px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.9px;
+    }
+}
 
 /* =========================================
    MOBILE
-   ========================================= */
+========================================= */
 
 @media (max-width: 600px) {
 
+    .product-card {
+        transform: none;
+    }
+
+    .product-card:hover {
+        transform: none;
+    }
+
     .product-image-card {
         height: 300px;
+
+        object-fit: cover;
     }
 
     .product-details {
@@ -189,49 +317,193 @@
 
     .product-title {
         font-size: 13px;
+
+        margin-bottom: 7px;
     }
 
     .product-price {
         font-size: 13px;
+
         margin-bottom: 9px;
+    }
+
+    .rating-container {
+        margin-bottom: 5px;
     }
 
     .product-review {
         font-size: 11px;
+
         margin-bottom: 12px;
     }
 
     .add-to-cart {
         height: 38px;
-        font-size: 11px;
+
+        padding: 0 10px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.8px;
     }
 }
 
-
 /* =========================================
    SMALL MOBILE
-   ========================================= */
+========================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     .product-image-card {
-        height: 250px;
+        height: 270px;
     }
 
     .product-details {
-        padding-top: 11px;
+        padding: 12px 2px 18px;
     }
 
     .product-title {
         font-size: 12px;
+
+        margin-bottom: 6px;
     }
 
     .product-price {
         font-size: 12px;
+
+        margin-bottom: 8px;
+    }
+
+    .rating-container {
+        min-height: 16px;
+
+        margin-bottom: 4px;
+    }
+
+    .product-review {
+        font-size: 10px;
+
+        margin-bottom: 10px;
     }
 
     .add-to-cart {
-        height: 36px;
+        height: 37px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.7px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .product-image-card {
+        height: 235px;
+    }
+
+    .product-details {
+        padding: 10px 1px 16px;
+    }
+
+    .product-title {
+        font-size: 11px;
+
+        margin-bottom: 5px;
+    }
+
+    .product-price {
+        font-size: 11px;
+
+        margin-bottom: 7px;
+    }
+
+    .product-review {
+        font-size: 9px;
+
+        margin-bottom: 9px;
+    }
+
+    .add-to-cart {
+        height: 35px;
+
+        padding: 0 7px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.6px;
+    }
+}
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 320px) {
+
+    .product-image-card {
+        height: 205px;
+    }
+
+    .product-details {
+        padding: 9px 1px 14px;
+    }
+
+    .product-title {
         font-size: 10px;
+    }
+
+    .product-price {
+        font-size: 10px;
+    }
+
+    .product-review {
+        font-size: 8px;
+    }
+
+    .add-to-cart {
+        height: 33px;
+
+        font-size: 7.5px;
+
+        letter-spacing: 0.5px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   Prevent hover effects from sticking
+========================================= */
+
+@media (hover: none) {
+
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-card:hover .product-image-card {
+        transform: none;
+    }
+
+    .add-to-cart:hover {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-card,
+    .product-image-card,
+    .add-to-cart {
+        transition: none;
     }
 }

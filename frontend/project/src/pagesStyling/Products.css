@@ -1,138 +1,440 @@
-.products-page {
-    display: flex;
-    max-width: 1500px;
-    margin: 40px auto;
-    gap: 40px;
-    padding: 0 30px;
+/* =========================================================
+   PRODUCTS PAGE - H&M / ZARA INSPIRED
+   Responsive • Minimal • Editorial • Fashion Store
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-/* Sidebar */
+.products-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
 
 .sidebar {
-    width: 250px;
-    position: sticky;
-    top: 100px;
-    align-self: flex-start;
+  width: 250px;
+  min-width: 250px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
 }
 
 .sidebar h2 {
-    font-size: 18px;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  margin: 0 0 25px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .sidebar ul {
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .sidebar li {
-    padding: 12px 0;
-    cursor: pointer;
-    color: #555;
-    border-bottom: 1px solid #efefef;
-    transition: .3s;
-    font-size: 15px;
+  padding: 12px 0;
+  cursor: pointer;
+  color: #555;
+  border-bottom: 1px solid #efefef;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: all 0.3s ease;
 }
 
 .sidebar li:hover {
-    color: black;
-    padding-left: 10px;
+  color: #111;
+  padding-left: 10px;
 }
 
 .sidebar li.active {
-    color: black;
-    font-weight: 600;
-    padding-left: 10px;
+  color: #111;
+  font-weight: 600;
+  padding-left: 10px;
 }
 
-/* Products */
+/* =========================================================
+   PRODUCTS CONTENT
+   ========================================================= */
 
 .products-content {
-    flex: 1;
+  flex: 1;
+  min-width: 0;
 }
 
+/* =========================================================
+   PRODUCTS HEADER
+   ========================================================= */
+
 .products-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 35px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ddd;
 }
 
 .products-header h2 {
-    font-size: 28px;
-    font-weight: 500;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .products-header span {
-    color: #777;
+  flex-shrink: 0;
+  color: #777;
+  font-size: 14px;
 }
+
+/* =========================================================
+   PRODUCTS GRID
+   ========================================================= */
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    gap: 35px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
 }
 
-/* Responsive */
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
 
-@media(max-width:900px){
+@media screen and (max-width: 1300px) {
 
-.products-page{
+  .products-page {
+    gap: 30px;
+  }
+
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media screen and (max-width: 1000px) {
+
+  .products-page {
     flex-direction: column;
-}
+    gap: 30px;
+    margin: 30px auto;
+    padding: 0 25px;
+  }
 
-.sidebar{
-    width:100%;
+  .sidebar {
+    width: 100%;
+    min-width: 0;
     position: static;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+
+  .sidebar ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar li {
+    width: auto;
+    padding: 10px 17px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    border-radius: 0;
+    transition: all 0.25s ease;
+  }
+
+  .sidebar li:hover {
+    padding-left: 17px;
+    border-color: #111;
+  }
+
+  .sidebar li.active {
+    padding-left: 17px;
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+
+  .products-content {
+    width: 100%;
+  }
+
+  .products-header {
+    margin-bottom: 28px;
+  }
+
+  .products-header h2 {
+    font-size: 25px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
 }
 
-.sidebar ul{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .products-page {
+    margin: 25px auto;
+    padding: 0 20px;
+    gap: 25px;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .sidebar ul {
+    gap: 8px;
+  }
+
+  .sidebar li {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .sidebar li:hover,
+  .sidebar li.active {
+    padding-left: 14px;
+  }
+
+  .products-header {
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    gap: 12px;
+  }
+
+  .products-header h2 {
+    font-size: 22px;
+  }
+
+  .products-header span {
+    font-size: 12px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
 }
 
-.sidebar li{
-    border:1px solid #ddd;
-    padding:10px 18px;
-    border-radius:30px;
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .products-page {
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 22px;
+  }
+
+  /* Sidebar */
+
+  .sidebar h2 {
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+  }
+
+  .sidebar ul {
+    gap: 7px;
+  }
+
+  .sidebar li {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .sidebar li:hover,
+  .sidebar li.active {
+    padding-left: 12px;
+  }
+
+  /* Header */
+
+  .products-header {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+
+  .products-header h2 {
+    font-size: 20px;
+  }
+
+  .products-header span {
+    font-size: 11px;
+  }
+
+  /* Grid */
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 }
 
-.sidebar li:hover{
-    padding:10px 18px;
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .products-page {
+    margin: 15px auto;
+    padding: 0 12px;
+    gap: 18px;
+  }
+
+  .sidebar h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .sidebar ul {
+    gap: 6px;
+  }
+
+  .sidebar li {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .sidebar li:hover,
+  .sidebar li.active {
+    padding-left: 10px;
+  }
+
+  .products-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    gap: 8px;
+  }
+
+  .products-header h2 {
+    font-size: 18px;
+  }
+
+  .products-header span {
+    font-size: 10px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
 }
 
-.sidebar li.active{
-    background:black;
-    color:white;
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .products-page {
+    padding: 0 10px;
+    margin-top: 12px;
+  }
+
+  .sidebar h2 {
+    font-size: 13px;
+  }
+
+  .sidebar ul {
+    gap: 5px;
+  }
+
+  .sidebar li {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .sidebar li:hover,
+  .sidebar li.active {
+    padding-left: 8px;
+  }
+
+  .products-header h2 {
+    font-size: 16px;
+  }
+
+  .products-header span {
+    font-size: 9px;
+  }
+
+  .products-grid {
+    gap: 10px;
+  }
 }
 
-.products-header{
-    margin-top:20px;
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .sidebar li:hover {
+    padding-left: 12px;
+    color: #555;
+    border-color: #ddd;
+  }
+
+  .sidebar li.active:hover {
+    padding-left: 12px;
+    color: #fff;
+    background: #111;
+    border-color: #111;
+  }
 }
 
-}
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
-@media(max-width:600px){
+@media (prefers-reduced-motion: reduce) {
 
-.products-page{
-    padding:0 15px;
-}
-
-.products-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.products-header h2{
-    font-size:22px;
-}
-
-.products-header span{
-    font-size:14px;
-}
-
+  .sidebar li {
+    transition: none;
+  }
 }

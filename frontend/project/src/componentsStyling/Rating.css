@@ -1,23 +1,135 @@
+
+/* ================================
+   RATING
+================================ */
+
 .rating {
     display: flex;
     align-items: center;
     gap: 4px;
+    width: fit-content;
+    max-width: 100%;
 }
 
+/* Star */
 .star {
     font-size: 28px;
+    line-height: 1;
     cursor: pointer;
     transition: transform 0.2s ease;
+    user-select: none;
+    flex-shrink: 0;
 }
 
+/* Filled Star */
 .star.filled {
     color: rgba(226, 226, 0, 0.724);
 }
 
+/* Empty Star */
 .star.empty {
     color: #ccc;
 }
 
+/* Hover */
 .star:hover {
     transform: scale(1.2);
+}
+
+
+/* ================================
+   LARGE SCREENS
+================================ */
+
+@media (max-width: 1400px) {
+    .star {
+        font-size: 26px;
+    }
+
+    .rating {
+        gap: 3px;
+    }
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 992px) {
+    .star {
+        font-size: 25px;
+    }
+
+    .rating {
+        gap: 3px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+    .star {
+        font-size: 23px;
+    }
+
+    .rating {
+        gap: 2px;
+    }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 400px) {
+    .star {
+        font-size: 21px;
+    }
+
+    .rating {
+        gap: 2px;
+    }
+}
+
+
+/* ================================
+   VERY SMALL DEVICES
+================================ */
+
+@media (max-width: 320px) {
+    .star {
+        font-size: 19px;
+    }
+
+    .rating {
+        gap: 1px;
+    }
+}
+
+
+/* ================================
+   TOUCH DEVICES
+   Prevent hover scaling
+================================ */
+
+@media (hover: none) {
+    .star:hover {
+        transform: none;
+    }
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .star {
+        transition: none;
+    }
 }

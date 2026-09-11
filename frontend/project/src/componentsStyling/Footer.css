@@ -1,355 +1,580 @@
-
 /* =========================================
    EasyShop Footer
-   H&M / Zara Inspired Theme
-   ========================================= */
+   H&M / ZARA INSPIRED RESPONSIVE THEME
+========================================= */
 
 .footer-easyhop {
-  width: 100%;
-  background: #f7f7f5;
-  color: #111;
-  font-family: Arial, Helvetica, sans-serif;
-  border-top: 1px solid #e5e5e5;
+    width: 100%;
+
+    background: #f7f7f5;
+    color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border-top: 1px solid #e5e5e5;
+
+    box-sizing: border-box;
 }
 
-/* Main Footer Container */
+.footer-easyhop *,
+.footer-easyhop *::before,
+.footer-easyhop *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   MAIN FOOTER CONTAINER
+========================================= */
+
 .footer-container-easyhop {
-  width: 92%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 45px 0 38px;
+    width: 92%;
+    max-width: 1400px;
 
-  display: grid;
-  grid-template-columns: 2fr 1fr 1.3fr 1fr;
-  gap: 50px;
+    margin: 0 auto;
+
+    padding: 45px 0 38px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(0, 1fr)
+        minmax(0, 1.3fr)
+        minmax(0, 1fr);
+
+    gap: 50px;
 }
 
-/* Footer Sections */
+/* =========================================
+   FOOTER SECTIONS
+========================================= */
+
 .footer-section-easyhop {
-  min-width: 0;
+    min-width: 0;
 }
 
-/* Brand */
-.footer-logo-easyhop {
-  margin: 0 0 15px;
+/* =========================================
+   BRAND
+========================================= */
 
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  text-transform: uppercase;
+.footer-logo-easyhop {
+    margin: 0 0 15px;
+
+    color: #111;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
 }
 
 .footer-section-easyhop p {
-  margin: 0;
-  max-width: 310px;
+    width: 100%;
+    max-width: 310px;
 
-  font-size: 13px;
-  line-height: 1.7;
-  color: #555;
+    margin: 0;
+
+    color: #555;
+
+    font-size: 13px;
+    line-height: 1.7;
 }
 
-/* Section Headings */
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
 .footer-section-easyhop h3 {
-  margin: 2px 0 18px;
+    margin: 2px 0 18px;
 
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+    color: #111;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    line-height: 1.3;
+
+    text-transform: uppercase;
 }
 
-/* Lists */
+/* =========================================
+   LISTS
+========================================= */
+
 .footer-section-easyhop ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
 }
 
 .footer-section-easyhop li {
-  margin-bottom: 11px;
+    margin-bottom: 11px;
 }
 
 .footer-section-easyhop li a {
-  position: relative;
+    position: relative;
 
-  color: #333;
-  text-decoration: none;
+    color: #333;
 
-  font-size: 13px;
-  font-weight: 400;
+    text-decoration: none;
 
-  transition: color 0.2s ease;
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    transition: color 0.2s ease;
 }
 
-/* Minimal Zara-style underline */
+/* =========================================
+   MINIMAL UNDERLINE
+========================================= */
+
 .footer-section-easyhop li a::after {
-  content: "";
+    content: "";
 
-  position: absolute;
-  left: 0;
-  bottom: -3px;
+    position: absolute;
 
-  width: 0;
-  height: 1px;
+    left: 0;
+    bottom: -3px;
 
-  background: #111;
+    width: 0;
+    height: 1px;
 
-  transition: width 0.25s ease;
+    background: #111;
+
+    transition: width 0.25s ease;
 }
 
 .footer-section-easyhop li a:hover {
-  color: #000;
+    color: #000;
 }
 
 .footer-section-easyhop li a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* Social Media */
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
 .social-icons-easyhop {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
 }
 
 .social-icons-easyhop a {
-  width: 34px;
-  height: 34px;
+    width: 34px;
+    height: 34px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    flex: 0 0 auto;
 
-  border: 1px solid #d6d6d6;
-  border-radius: 50%;
+    display: flex;
 
-  color: #111;
-  text-decoration: none;
+    align-items: center;
+    justify-content: center;
 
-  font-size: 13px;
+    border: 1px solid #d6d6d6;
+    border-radius: 50%;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+    background: transparent;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .social-icons-easyhop a:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-  transform: translateY(-2px);
+    background: #111;
+    color: #fff;
+
+    border-color: #111;
+
+    transform: translateY(-2px);
 }
 
-/* Bottom Bar */
+/* =========================================
+   BOTTOM BAR
+========================================= */
+
 .footer-bottom-easyhop {
-  width: 92%;
-  max-width: 1400px;
+    width: 92%;
+    max-width: 1400px;
 
-  margin: 0 auto;
+    margin: 0 auto;
 
-  padding: 18px 0;
+    padding: 18px 0;
 
-  border-top: 1px solid #dedede;
+    border-top: 1px solid #dedede;
 
-  text-align: center;
+    text-align: center;
 }
 
 .footer-bottom-easyhop p {
-  margin: 0;
+    width: 100%;
+    max-width: none;
 
-  color: #777;
+    margin: 0;
 
-  font-size: 11px;
-  letter-spacing: 0.4px;
-}
+    color: #777;
 
-
-/* =========================================
-   Large Tablets
-   ========================================= */
-
-@media (max-width: 1000px) {
-
-  .footer-container-easyhop {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 35px;
-    padding: 40px 0 32px;
-  }
-
-  .footer-section-easyhop:first-child {
-    grid-column: 1 / -1;
-  }
-
-  .footer-logo-easyhop {
-    font-size: 27px;
-  }
-}
-
-
-/* =========================================
-   Tablets
-   ========================================= */
-
-@media (max-width: 700px) {
-
-  .footer-container-easyhop {
-    width: 90%;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 32px 25px;
-
-    padding: 35px 0 30px;
-  }
-
-  .footer-section-easyhop:first-child {
-    grid-column: 1 / -1;
-  }
-
-  .footer-logo-easyhop {
-    font-size: 25px;
-    margin-bottom: 10px;
-  }
-
-  .footer-section-easyhop p {
-    font-size: 12px;
-    max-width: 420px;
-    line-height: 1.6;
-  }
-
-  .footer-section-easyhop h3 {
-    margin-bottom: 14px;
-    font-size: 12px;
-  }
-
-  .footer-section-easyhop li {
-    margin-bottom: 9px;
-  }
-
-  .footer-section-easyhop li a {
-    font-size: 12px;
-  }
-
-  .social-icons-easyhop {
-    gap: 9px;
-  }
-
-  .social-icons-easyhop a {
-    width: 32px;
-    height: 32px;
-    font-size: 12px;
-  }
-
-  .footer-bottom-easyhop {
-    width: 90%;
-    padding: 15px 0;
-  }
-
-  .footer-bottom-easyhop p {
-    font-size: 10px;
-  }
-}
-
-
-/* =========================================
-   Mobile
-   ========================================= */
-
-@media (max-width: 480px) {
-
-  .footer-container-easyhop {
-    width: 88%;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 28px 18px;
-
-    padding: 30px 0 25px;
-  }
-
-  .footer-section-easyhop:first-child {
-    grid-column: 1 / -1;
-  }
-
-  .footer-logo-easyhop {
-    font-size: 22px;
-    letter-spacing: -1px;
-  }
-
-  .footer-section-easyhop p {
     font-size: 11px;
-    line-height: 1.55;
-  }
 
-  .footer-section-easyhop h3 {
-    margin-bottom: 12px;
-
-    font-size: 10px;
-    letter-spacing: 0.8px;
-  }
-
-  .footer-section-easyhop li {
-    margin-bottom: 8px;
-  }
-
-  .footer-section-easyhop li a {
-    font-size: 11px;
-  }
-
-  .social-icons-easyhop {
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-
-  .social-icons-easyhop a {
-    width: 29px;
-    height: 29px;
-    font-size: 11px;
-  }
-
-  .footer-bottom-easyhop {
-    width: 88%;
-    padding: 13px 0;
-  }
-
-  .footer-bottom-easyhop p {
-    font-size: 9px;
-    letter-spacing: 0.2px;
-  }
+    letter-spacing: 0.4px;
+    line-height: 1.5;
 }
 
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .footer-container-easyhop {
+        padding-top: 50px;
+        padding-bottom: 42px;
+
+        gap: 60px;
+    }
+
+    .footer-logo-easyhop {
+        font-size: 32px;
+    }
+
+    .footer-section-easyhop p,
+    .footer-section-easyhop li a {
+        font-size: 13px;
+    }
+}
 
 /* =========================================
-   Very Small Phones
-   ========================================= */
+   LAPTOP / LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .footer-container-easyhop {
+        width: 90%;
+
+        grid-template-columns:
+            minmax(0, 1.5fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 35px;
+    }
+
+    .footer-section-easyhop:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo-easyhop {
+        font-size: 28px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .footer-container-easyhop {
+        width: 90%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 32px 28px;
+
+        padding: 38px 0 32px;
+    }
+
+    .footer-section-easyhop:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo-easyhop {
+        font-size: 26px;
+
+        margin-bottom: 11px;
+    }
+
+    .footer-section-easyhop p {
+        max-width: 500px;
+
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .footer-section-easyhop h3 {
+        margin-bottom: 14px;
+
+        font-size: 12px;
+    }
+
+    .footer-section-easyhop li {
+        margin-bottom: 9px;
+    }
+
+    .footer-section-easyhop li a {
+        font-size: 12px;
+    }
+
+    .social-icons-easyhop {
+        gap: 9px;
+    }
+
+    .social-icons-easyhop a {
+        width: 32px;
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+    .footer-bottom-easyhop {
+        width: 90%;
+
+        padding: 15px 0;
+    }
+
+    .footer-bottom-easyhop p {
+        font-size: 10px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .footer-container-easyhop {
+        width: 90%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 28px 20px;
+
+        padding: 32px 0 27px;
+    }
+
+    .footer-section-easyhop:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo-easyhop {
+        font-size: 23px;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-section-easyhop p {
+        max-width: 100%;
+
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .footer-section-easyhop h3 {
+        margin: 0 0 12px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.8px;
+    }
+
+    .footer-section-easyhop li {
+        margin-bottom: 8px;
+    }
+
+    .footer-section-easyhop li a {
+        font-size: 11px;
+    }
+
+    .social-icons-easyhop {
+        gap: 7px;
+    }
+
+    .social-icons-easyhop a {
+        width: 30px;
+        height: 30px;
+
+        font-size: 11px;
+    }
+
+    .footer-bottom-easyhop {
+        width: 90%;
+
+        padding: 13px 0;
+    }
+
+    .footer-bottom-easyhop p {
+        font-size: 9px;
+
+        letter-spacing: 0.2px;
+
+        line-height: 1.5;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .footer-container-easyhop {
+        width: 92%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 25px 14px;
+
+        padding: 28px 0 23px;
+    }
+
+    .footer-logo-easyhop {
+        font-size: 21px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .footer-section-easyhop p {
+        font-size: 10px;
+        line-height: 1.55;
+    }
+
+    .footer-section-easyhop h3 {
+        font-size: 9px;
+
+        letter-spacing: 0.7px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-section-easyhop li {
+        margin-bottom: 7px;
+    }
+
+    .footer-section-easyhop li a {
+        font-size: 10px;
+    }
+
+    .social-icons-easyhop {
+        gap: 6px;
+    }
+
+    .social-icons-easyhop a {
+        width: 28px;
+        height: 28px;
+
+        font-size: 10px;
+    }
+
+    .footer-bottom-easyhop {
+        width: 92%;
+
+        padding: 12px 0;
+    }
+
+    .footer-bottom-easyhop p {
+        font-size: 8px;
+
+        letter-spacing: 0.15px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
 
 @media (max-width: 350px) {
 
-  .footer-container-easyhop {
-    width: 90%;
-    gap: 24px 12px;
-  }
+    .footer-container-easyhop {
+        width: 92%;
 
-  .footer-logo-easyhop {
-    font-size: 20px;
-  }
+        gap: 22px 10px;
 
-  .footer-section-easyhop h3 {
-    font-size: 9px;
-  }
+        padding: 25px 0 20px;
+    }
 
-  .footer-section-easyhop li a {
-    font-size: 10px;
-  }
+    .footer-logo-easyhop {
+        font-size: 19px;
+    }
 
-  .social-icons-easyhop a {
-    width: 27px;
-    height: 27px;
-  }
+    .footer-section-easyhop p {
+        font-size: 9px;
+    }
 
-  .footer-bottom-easyhop p {
-    font-size: 8px;
-  }
+    .footer-section-easyhop h3 {
+        font-size: 8px;
+    }
+
+    .footer-section-easyhop li a {
+        font-size: 9px;
+    }
+
+    .social-icons-easyhop {
+        gap: 5px;
+    }
+
+    .social-icons-easyhop a {
+        width: 26px;
+        height: 26px;
+
+        font-size: 9px;
+    }
+
+    .footer-bottom-easyhop p {
+        font-size: 7.5px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   Prevent hover effects from sticking
+========================================= */
+
+@media (hover: none) {
+
+    .footer-section-easyhop li a:hover {
+        color: #333;
+    }
+
+    .footer-section-easyhop li a:hover::after {
+        width: 0;
+    }
+
+    .social-icons-easyhop a:hover {
+        background: transparent;
+        color: #111;
+        border-color: #d6d6d6;
+        transform: none;
+    }
 }

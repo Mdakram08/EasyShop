@@ -5,9 +5,18 @@
 
 .admin-products-page {
     min-height: 70vh;
+    width: 100%;
     padding: 55px 6%;
     background: #f7f7f5;
     font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    box-sizing: border-box;
+}
+
+.admin-products-page *,
+.admin-products-page *::before,
+.admin-products-page *::after {
+    box-sizing: border-box;
 }
 
 
@@ -19,26 +28,33 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 20px;
+
     margin-bottom: 35px;
     padding-bottom: 22px;
+
     border-bottom: 1px solid #d8d8d8;
 }
 
 .admin-products-header h1 {
     margin: 0;
     color: #111;
+
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
 }
 
 .admin-products-header p {
     margin: 9px 0 0;
+
     color: #777;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.8px;
+
     text-transform: uppercase;
 }
 
@@ -49,15 +65,20 @@
 
 .create-product-btn {
     padding: 13px 22px;
+
     border: 1px solid #111;
     background: #111;
     color: #fff;
+
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.8px;
+
     text-transform: uppercase;
     cursor: pointer;
+
     transition: all 0.25s ease;
+    white-space: nowrap;
 }
 
 .create-product-btn:hover {
@@ -72,9 +93,15 @@
 
 .products-table-container {
     width: 100%;
+    max-width: 100%;
+
     overflow-x: auto;
+    overflow-y: hidden;
+
     background: #fff;
     border: 1px solid #dedede;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 
@@ -84,7 +111,14 @@
 
 .products-table {
     width: 100%;
-    min-width: 1100px;
+
+    /*
+       Keeps all columns readable.
+       On small screens the table scrolls
+       inside the container.
+    */
+    min-width: 1000px;
+
     border-collapse: collapse;
 }
 
@@ -99,11 +133,14 @@
 
 .products-table th {
     padding: 17px 16px;
+
     color: #fff;
     text-align: left;
+
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.1px;
+
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -115,9 +152,12 @@
 
 .products-table td {
     padding: 17px 16px;
+
     border-bottom: 1px solid #e8e8e8;
+
     color: #444;
     font-size: 13px;
+
     vertical-align: middle;
 }
 
@@ -142,10 +182,14 @@
 .admin-product-image {
     width: 58px;
     height: 72px;
+
     display: block;
+
     object-fit: cover;
+
     background: #f1f1f1;
     border: 1px solid #e5e5e5;
+
     transition: transform 0.25s ease;
 }
 
@@ -160,6 +204,7 @@
 
 .products-table td:nth-child(3) {
     min-width: 150px;
+
     color: #111;
     font-size: 14px;
     font-weight: 500;
@@ -192,6 +237,7 @@
 
 .products-table td:nth-child(6) {
     text-transform: capitalize;
+    white-space: nowrap;
 }
 
 
@@ -201,13 +247,19 @@
 
 .stock-low {
     display: inline-block;
+
     min-width: 35px;
     padding: 5px 9px;
+
     border: 1px solid #d5d5d5;
+
     background: #f7f7f7;
     color: #333;
+
     font-size: 11px;
     text-align: center;
+
+    white-space: nowrap;
 }
 
 
@@ -218,11 +270,10 @@
 .product-actions {
     display: flex;
     align-items: center;
+
     gap: 8px;
+    flex-wrap: nowrap;
 }
-
-
-/* Remove Link styling */
 
 .product-actions a {
     display: flex;
@@ -237,13 +288,19 @@
 .product-actions button {
     width: 36px;
     height: 36px;
+
     padding: 0;
+
     border: 1px solid #d2d2d2;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     cursor: pointer;
+
     font-size: 12px;
+
     transition: all 0.2s ease;
 }
 
@@ -286,9 +343,12 @@
 
 .products-table td:nth-child(8) {
     min-width: 145px;
+
     color: #666;
     font-size: 11px;
     line-height: 1.5;
+
+    white-space: nowrap;
 }
 
 
@@ -298,11 +358,14 @@
 
 .products-table td[colspan="9"] {
     height: 250px;
+
     color: #777;
     text-align: center;
+
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
+
     text-transform: uppercase;
 }
 
@@ -323,57 +386,90 @@
     background: #111;
 }
 
+.products-table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 
 /* =========================================
-   RESPONSIVE
+   LARGE DESKTOP
+   1400px+
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (min-width: 1400px) {
+
+    .admin-products-page {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .products-table th {
+        padding: 18px 20px;
+    }
+
+    .products-table td {
+        padding: 19px 20px;
+    }
+}
+
+
+/* =========================================
+   LAPTOP
+   1200px
+========================================= */
+
+@media (max-width: 1200px) {
 
     .admin-products-page {
         padding: 45px 4%;
+    }
+
+    .products-table {
+        min-width: 980px;
+    }
+
+    .products-table th {
+        padding: 15px 13px;
+    }
+
+    .products-table td {
+        padding: 15px 13px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   900px
+========================================= */
+
+@media (max-width: 900px) {
+
+    .admin-products-page {
+        padding: 40px 3%;
+    }
+
+    .admin-products-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
     }
 
     .admin-products-header h1 {
         font-size: 24px;
     }
 
-}
-
-
-@media (max-width: 700px) {
-
-    .admin-products-page {
-        padding: 35px 15px;
-    }
-
-    .admin-products-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .admin-products-header h1 {
-        font-size: 21px;
-    }
-
     .admin-products-header p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .create-product-btn {
-        width: 100%;
-        padding: 14px;
+        align-self: flex-start;
     }
 
-}
-
-
-/* =========================================
-   SMALL SCREEN TABLE
-========================================= */
-
-@media (max-width: 500px) {
+    .products-table {
+        min-width: 950px;
+    }
 
     .products-table th {
         padding: 14px 12px;
@@ -382,11 +478,218 @@
 
     .products-table td {
         padding: 14px 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET
+   700px
+========================================= */
+
+@media (max-width: 700px) {
+
+    .admin-products-page {
+        padding: 30px 20px;
+    }
+
+    .admin-products-header {
+        margin-bottom: 25px;
+        padding-bottom: 18px;
+    }
+
+    .admin-products-header h1 {
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .admin-products-header p {
+        margin-top: 7px;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .create-product-btn {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .products-table {
+        min-width: 900px;
+    }
+
+    .products-table th {
+        padding: 13px 11px;
+    }
+
+    .products-table td {
+        padding: 13px 11px;
     }
 
     .admin-product-image {
-        width: 50px;
-        height: 64px;
+        width: 54px;
+        height: 68px;
     }
 
+    .products-table td:nth-child(3) {
+        min-width: 140px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   500px
+========================================= */
+
+@media (max-width: 500px) {
+
+    .admin-products-page {
+        padding: 25px 12px;
+    }
+
+    .admin-products-header {
+        margin-bottom: 20px;
+    }
+
+    .admin-products-header h1 {
+        font-size: 19px;
+        letter-spacing: 0.8px;
+    }
+
+    .admin-products-header p {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .create-product-btn {
+        padding: 13px;
+        font-size: 9px;
+    }
+
+    /*
+       Table remains readable and scrolls
+       horizontally inside its container.
+    */
+    .products-table {
+        min-width: 850px;
+    }
+
+    .products-table th {
+        padding: 12px 10px;
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .products-table td {
+        padding: 12px 10px;
+        font-size: 10px;
+    }
+
+    .admin-product-image {
+        width: 48px;
+        height: 62px;
+    }
+
+    .products-table td:nth-child(3) {
+        min-width: 125px;
+        font-size: 11px;
+    }
+
+    .products-table td:nth-child(4) {
+        font-size: 11px;
+    }
+
+    .stock-low {
+        min-width: 32px;
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    .product-actions {
+        gap: 5px;
+    }
+
+    .product-actions button {
+        width: 32px;
+        height: 32px;
+        font-size: 10px;
+    }
+
+    .products-table td:nth-child(8) {
+        min-width: 125px;
+        font-size: 9px;
+    }
+
+    .products-table td[colspan="9"] {
+        height: 200px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .admin-products-page {
+        padding: 20px 8px;
+    }
+
+    .admin-products-header h1 {
+        font-size: 17px;
+    }
+
+    .admin-products-header p {
+        font-size: 8px;
+    }
+
+    .create-product-btn {
+        font-size: 8px;
+        padding: 12px;
+    }
+
+    .products-table {
+        min-width: 820px;
+    }
+
+    .products-table th {
+        padding: 11px 9px;
+        font-size: 8px;
+    }
+
+    .products-table td {
+        padding: 11px 9px;
+    }
+
+    .admin-product-image {
+        width: 44px;
+        height: 58px;
+    }
+
+    .product-actions button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+========================================= */
+
+@media (hover: none) {
+
+    .products-table tbody tr:hover {
+        background: #fff;
+    }
+
+    .products-table tbody tr:hover .admin-product-image {
+        transform: none;
+    }
 }

@@ -1,28 +1,128 @@
 
+/* =========================================
+   EasyShop Loader
+   Responsive H&M / Zara Inspired Theme
+========================================= */
+
 .loader-container {
+    width: 100%;
+
     display: flex;
     justify-content: center;
-    margin-top: 5px;
     align-items: center;
-  }
-  
 
-  .loader {
-    border: 10px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid var(--primary-main, #6C5B7B); 
+    margin-top: 5px;
+
+    box-sizing: border-box;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+
+    border: 8px solid #e8e8e8;
+    border-top: 4px solid var(--primary-main, #111);
+
     border-radius: 50%;
-    width: 80px; 
-    height: 80px; 
-    animation: spin 1s linear infinite; 
-  }
-  
 
-  @keyframes spin {
+    animation: spin 1s linear infinite;
+
+    box-sizing: border-box;
+}
+
+/* =========================================
+   SPINNER ANIMATION
+========================================= */
+
+@keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .loader-container {
+        margin-top: 5px;
+    }
+
+    .loader {
+        width: 60px;
+        height: 60px;
+
+        border-width: 7px;
+        border-top-width: 4px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .loader-container {
+        margin-top: 5px;
+    }
+
+    .loader {
+        width: 48px;
+        height: 48px;
+
+        border-width: 6px;
+        border-top-width: 3px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .loader-container {
+        margin-top: 4px;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+
+        border-width: 5px;
+        border-top-width: 3px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 320px) {
+
+    .loader {
+        width: 34px;
+        height: 34px;
+
+        border-width: 4px;
+        border-top-width: 2px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .loader {
+        animation-duration: 2s;
+    }
+}

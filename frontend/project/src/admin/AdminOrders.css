@@ -1,3 +1,4 @@
+
 /* =========================================
    ADMIN ORDERS
    H&M / ZARA BLACK & WHITE STYLE
@@ -5,14 +6,17 @@
 
 .admin-orders-page {
     min-height: 70vh;
-
     padding: 55px 6%;
-
     background: #f8f8f6;
-
     font-family: Arial, Helvetica, sans-serif;
-
     color: #111;
+    box-sizing: border-box;
+}
+
+.admin-orders-page *,
+.admin-orders-page *::before,
+.admin-orders-page *::after {
+    box-sizing: border-box;
 }
 
 
@@ -22,41 +26,28 @@
 
 .admin-orders-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
-
     margin-bottom: 35px;
-
     padding-bottom: 22px;
-
     border-bottom: 1px solid #d8d8d8;
+    gap: 20px;
 }
 
 .admin-orders-header h1 {
     margin: 0;
-
     color: #111;
-
     font-size: 28px;
-
     font-weight: 500;
-
     letter-spacing: 1.5px;
-
     text-transform: uppercase;
 }
 
 .admin-orders-header p {
     margin: 9px 0 0;
-
     color: #777;
-
     font-size: 12px;
-
     letter-spacing: 0.8px;
-
     text-transform: uppercase;
 }
 
@@ -67,33 +58,22 @@
 
 .orders-export-btn {
     min-width: 110px;
-
     padding: 10px 16px;
-
     border: 1px solid #111;
-
     background: #111;
-
     color: #fff;
-
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 0.8px;
-
     text-transform: uppercase;
-
     cursor: pointer;
-
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .orders-export-btn:hover {
     background: #fff;
-
     color: #111;
 }
 
@@ -104,30 +84,23 @@
 
 .orders-stats {
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1px;
-
     margin-bottom: 35px;
-
     background: #d8d8d8;
-
     border: 1px solid #d8d8d8;
 }
 
 .orders-stat-card {
     min-height: 105px;
-
     padding: 25px;
-
     background: #fff;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
+
+    transition: background 0.2s ease;
 }
 
 .orders-stat-card:hover {
@@ -136,23 +109,16 @@
 
 .orders-stat-card span {
     color: #777;
-
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 1.2px;
-
     text-transform: uppercase;
 }
 
 .orders-stat-card h2 {
     margin: 10px 0 0;
-
     color: #111;
-
     font-size: 28px;
-
     font-weight: 500;
 }
 
@@ -163,12 +129,14 @@
 
 .orders-table-wrapper {
     width: 100%;
-
+    max-width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
 
     background: #fff;
-
     border: 1px solid #dedede;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 
@@ -178,9 +146,7 @@
 
 .orders-table {
     width: 100%;
-
-    min-width: 1100px;
-
+    min-width: 950px;
     border-collapse: collapse;
 }
 
@@ -195,17 +161,12 @@
 
 .orders-table th {
     padding: 17px 18px;
-
     color: #fff;
-
     text-align: left;
 
     font-size: 11px;
-
     font-weight: 500;
-
     letter-spacing: 1.2px;
-
     text-transform: uppercase;
 
     white-space: nowrap;
@@ -218,19 +179,16 @@
 
 .orders-table td {
     padding: 19px 18px;
-
     color: #444;
 
     font-size: 13px;
 
     border-bottom: 1px solid #e8e8e8;
-
     vertical-align: middle;
 }
 
 .orders-table tbody tr {
     background: #fff;
-
     transition: background 0.2s ease;
 }
 
@@ -249,11 +207,8 @@
 
 .orders-table td:first-child {
     color: #111;
-
     font-size: 12px;
-
     font-weight: 600;
-
     letter-spacing: 0.3px;
 }
 
@@ -264,25 +219,19 @@
 
 .customer {
     display: flex;
-
     flex-direction: column;
-
     gap: 5px;
-
     min-width: 160px;
 }
 
 .customer strong {
     color: #111;
-
     font-size: 13px;
-
     font-weight: 500;
 }
 
 .customer span {
     color: #888;
-
     font-size: 11px;
 }
 
@@ -293,7 +242,6 @@
 
 .orders-table td:nth-child(3) {
     color: #555;
-
     font-size: 12px;
 }
 
@@ -304,74 +252,51 @@
 
 .order-price {
     color: #111 !important;
-
     font-size: 13px;
-
     font-weight: 600;
-
     white-space: nowrap;
 }
 
 
 /* =========================================
    PAYMENT
-   BLACK & WHITE
 ========================================= */
 
 .payment {
     display: inline-block;
 
     min-width: 60px;
-
     padding: 6px 10px;
 
     border: 1px solid #d5d5d5;
-
     background: #f7f7f7;
-
     color: #444;
 
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 0.8px;
 
     text-align: center;
-
     text-transform: uppercase;
+
+    white-space: nowrap;
 }
-
-
-/* PAID */
 
 .payment.paid {
     border-color: #111;
-
     background: #111;
-
     color: #fff;
 }
 
-
-/* PENDING */
-
 .payment.pending {
     border-color: #111;
-
     background: #fff;
-
     color: #111;
 }
 
-
-/* FAILED */
-
 .payment.failed {
     border-color: #777;
-
     background: #fff;
-
     color: #555;
 }
 
@@ -384,67 +309,43 @@
     display: inline-block;
 
     min-width: 80px;
-
     padding: 6px 10px;
 
     border: 1px solid #d5d5d5;
-
     background: #f7f7f7;
-
     color: #444;
 
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 0.8px;
 
     text-align: center;
-
     text-transform: uppercase;
+
+    white-space: nowrap;
 }
-
-
-/* DELIVERED */
 
 .status.delivered {
     border-color: #111;
-
     background: #111;
-
     color: #fff;
 }
 
-
-/* SHIPPED */
-
 .status.shipped {
     border-color: #111;
-
     background: #fff;
-
     color: #111;
 }
 
-
-/* PROCESSING */
-
 .status.processing {
     border-color: #777;
-
     background: #fff;
-
     color: #555;
 }
 
-
-/* CANCELLED */
-
 .status.cancelled {
     border-color: #111;
-
     background: #f7f7f7;
-
     color: #111;
 }
 
@@ -455,80 +356,67 @@
 
 .order-actions {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
+    flex-wrap: nowrap;
 }
 
 
 /* =========================================
-   COMMON ACTION BUTTON
+   ACTION BUTTONS
 ========================================= */
 
 .order-actions button {
     min-width: 65px;
-
     padding: 9px 12px;
 
     border: 1px solid #111;
 
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 10px;
-
     font-weight: 500;
-
     letter-spacing: 0.7px;
 
     text-transform: uppercase;
-
     cursor: pointer;
 
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 
 /* =========================================
-   EDIT BUTTON
+   EDIT
 ========================================= */
 
 .edit-order-btn {
     background: #111;
-
     color: #fff;
 }
 
 .edit-order-btn:hover {
     background: #fff;
-
     color: #111;
 }
 
 
 /* =========================================
-   DELETE BUTTON
+   DELETE
 ========================================= */
 
 .delete-order-btn {
     border-color: #ccc !important;
-
     background: #fff;
-
     color: #333;
 }
 
 .delete-order-btn:hover {
     border-color: #111 !important;
-
     background: #111;
-
     color: #fff;
 }
 
@@ -555,92 +443,301 @@
 
 
 /* =========================================
-   RESPONSIVE
+   LARGE TABLETS
+   1200px and below
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 
     .admin-orders-page {
-        padding: 40px 4%;
+        padding: 45px 4%;
     }
 
-    .orders-stats {
-        grid-template-columns: repeat(2, 1fr);
+    .orders-table {
+        min-width: 900px;
+    }
+
+    .orders-table th {
+        padding: 15px 14px;
+    }
+
+    .orders-table td {
+        padding: 16px 14px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   900px and below
+========================================= */
+
+@media (max-width: 900px) {
+
+    .admin-orders-page {
+        padding: 40px 3%;
     }
 
     .admin-orders-header {
         align-items: flex-start;
-
         flex-direction: column;
-
-        gap: 15px;
+        gap: 18px;
     }
 
     .orders-export-btn {
-        align-self: flex-end;
+        align-self: flex-start;
+    }
+
+    .orders-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .orders-stat-card {
+        min-height: 95px;
+        padding: 22px;
+    }
+
+    .orders-stat-card h2 {
+        font-size: 25px;
+    }
+
+    .orders-table {
+        min-width: 900px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET
+   700px and below
+========================================= */
+
+@media (max-width: 700px) {
+
+    .admin-orders-page {
+        padding: 30px 20px;
+    }
+
+    .admin-orders-header {
+        margin-bottom: 25px;
+        padding-bottom: 18px;
+    }
+
+    .admin-orders-header h1 {
+        font-size: 23px;
+        letter-spacing: 1px;
+    }
+
+    .admin-orders-header p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .orders-export-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .orders-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-bottom: 25px;
+    }
+
+    .orders-stat-card {
+        min-height: 85px;
+        padding: 18px;
+    }
+
+    .orders-stat-card span {
+        font-size: 9px;
+    }
+
+    .orders-stat-card h2 {
+        margin-top: 7px;
+        font-size: 22px;
+    }
+
+    .orders-table {
+        min-width: 850px;
+    }
+
+    .orders-table th {
+        padding: 13px 12px;
+        font-size: 10px;
+    }
+
+    .orders-table td {
+        padding: 14px 12px;
+        font-size: 12px;
+    }
+
+    .customer {
+        min-width: 140px;
     }
 }
 
 
 /* =========================================
    MOBILE
+   500px and below
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
     .admin-orders-page {
-        padding: 30px 15px;
+        padding: 25px 12px;
     }
 
     .admin-orders-header {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .admin-orders-header h1 {
-        font-size: 20px;
-
-        letter-spacing: 1px;
+        font-size: 19px;
     }
 
     .admin-orders-header p {
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
     }
 
     .orders-export-btn {
-        width: 100%;
+        font-size: 9px;
+        min-width: 0;
+    }
+
+    .orders-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+    }
+
+    .orders-stat-card {
+        min-height: 75px;
+        padding: 15px 12px;
+    }
+
+    .orders-stat-card span {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .orders-stat-card h2 {
+        font-size: 20px;
+    }
+
+    .orders-table-wrapper {
+        border-left: none;
+        border-right: none;
+    }
+
+    .orders-table {
+        min-width: 820px;
+    }
+
+    .orders-table th {
+        padding: 12px 10px;
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .orders-table td {
+        padding: 13px 10px;
+        font-size: 11px;
+    }
+
+    .orders-table td:first-child {
+        font-size: 10px;
+    }
+
+    .customer {
+        min-width: 125px;
+        gap: 3px;
+    }
+
+    .customer strong {
+        font-size: 11px;
+    }
+
+    .customer span {
+        font-size: 9px;
+    }
+
+    .orders-table td:nth-child(3) {
+        font-size: 10px;
+    }
+
+    .order-price {
+        font-size: 11px;
+    }
+
+    .payment,
+    .status {
+        min-width: 55px;
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .status {
+        min-width: 70px;
+    }
+
+    .order-actions {
+        gap: 5px;
+    }
+
+    .order-actions button {
+        min-width: 55px;
+        padding: 7px 8px;
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   360px and below
+========================================= */
+
+@media (max-width: 360px) {
+
+    .admin-orders-page {
+        padding: 20px 8px;
+    }
+
+    .admin-orders-header h1 {
+        font-size: 17px;
     }
 
     .orders-stats {
         grid-template-columns: 1fr;
-
-        margin-bottom: 25px;
     }
 
     .orders-stat-card {
-        min-height: 80px;
-
-        padding: 20px;
-    }
-
-    .orders-stat-card h2 {
-        font-size: 24px;
-    }
-
-    .orders-table th {
+        min-height: 70px;
         padding: 14px;
     }
 
-    .orders-table td {
-        padding: 15px 14px;
+    .orders-stat-card h2 {
+        font-size: 19px;
     }
 
-    .order-actions {
-        flex-direction: row;
+    .orders-table {
+        min-width: 800px;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+========================================= */
+
+@media (hover: none) {
+
+    .orders-table tbody tr:hover {
+        background: #fff;
     }
 
-    .order-actions button {
-        min-width: 60px;
-
-        padding: 8px 10px;
+    .orders-stat-card:hover {
+        background: #fff;
     }
 }

@@ -1,68 +1,313 @@
-.checkout-steps{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:30px 0 50px;
+
+/* ================================
+   CHECKOUT STEPS
+================================ */
+
+.checkout-steps {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto 50px;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
 }
 
-.step{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    color:#999;
-    font-size:14px;
-    font-weight:500;
+
+/* ================================
+   STEP
+================================ */
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #999;
+    font-size: 14px;
+    font-weight: 500;
+
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    transition: color 0.3s ease;
 }
 
-.circle{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    border:2px solid #ccc;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:8px;
-    background:#fff;
-    transition:.3s;
+
+/* ================================
+   CIRCLE
+================================ */
+
+.circle {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: 2px solid #ccc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    background: #fff;
+    color: #999;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.line{
-    width:120px;
-    height:2px;
-    background:#ccc;
-    margin:0 15px;
-    margin-bottom:28px;
+
+/* ================================
+   CONNECTING LINE
+================================ */
+
+.line {
+    width: 120px;
+    height: 2px;
+
+    flex-shrink: 1;
+
+    background: #ccc;
+
+    margin: 0 15px 28px;
+
+    transition: background 0.3s ease;
 }
 
-.active .circle{
-    background:#111;
-    border-color:#111;
-    color:#fff;
+
+/* ================================
+   ACTIVE STEP
+================================ */
+
+.active {
+    color: #111;
 }
 
-.active{
-    color:#111;
+.active .circle {
+    background: #111;
+    border-color: #111;
+    color: #fff;
 }
 
-.active-line{
-    background:#111;
+.active-line {
+    background: #111;
 }
 
-@media(max-width:768px){
 
-.line{
-    width:60px;
+/* ================================
+   LARGE LAPTOP
+================================ */
+
+@media (max-width: 1200px) {
+
+    .checkout-steps {
+        max-width: 800px;
+        padding: 0 15px;
+    }
+
+    .line {
+        width: 100px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .circle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .step {
+        font-size: 13px;
+    }
 }
 
-.circle{
-    width:35px;
-    height:35px;
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .checkout-steps {
+        margin: 25px auto 40px;
+        padding: 0 10px;
+    }
+
+    .line {
+        width: 75px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 27px;
+    }
+
+    .circle {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 7px;
+    }
+
+    .step {
+        font-size: 12px;
+    }
 }
 
-.step{
-    font-size:12px;
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .checkout-steps {
+        width: 100%;
+        margin: 20px auto 35px;
+        padding: 0 5px;
+    }
+
+    .line {
+        width: 50px;
+        margin-left: 7px;
+        margin-right: 7px;
+        margin-bottom: 25px;
+    }
+
+    .circle {
+        width: 34px;
+        height: 34px;
+        border-width: 2px;
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+
+    .step {
+        font-size: 11px;
+    }
 }
 
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    .checkout-steps {
+        margin-top: 18px;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .line {
+        width: 35px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 24px;
+    }
+
+    .circle {
+        width: 31px;
+        height: 31px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .step {
+        font-size: 10px;
+    }
+}
+
+
+/* ================================
+   VERY SMALL DEVICES
+================================ */
+
+@media (max-width: 360px) {
+
+    .checkout-steps {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .line {
+        width: 25px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 22px;
+    }
+
+    .circle {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 4px;
+        font-size: 11px;
+    }
+
+    .step {
+        font-size: 9px;
+    }
+}
+
+
+/* ================================
+   EXTRA SMALL DEVICES
+================================ */
+
+@media (max-width: 320px) {
+
+    .checkout-steps {
+        padding: 0 2px;
+    }
+
+    .line {
+        width: 20px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .circle {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .step {
+        font-size: 8px;
+    }
+}
+
+
+/* ================================
+   TOUCH DEVICES
+================================ */
+
+@media (hover: none) {
+
+    .circle,
+    .step,
+    .line {
+        transition: none;
+    }
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .circle,
+    .step,
+    .line {
+        transition: none;
+    }
 }

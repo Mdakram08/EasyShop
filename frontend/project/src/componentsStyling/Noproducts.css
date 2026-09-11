@@ -1,33 +1,257 @@
+
+/* =========================================
+   EasyShop No Products
+   H&M / ZARA INSPIRED RESPONSIVE THEME
+========================================= */
+
 .no-products-container {
+    width: 100%;
+
+    min-height: 400px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-  }
-  
-  .no-products-content {
-    height: 400px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.no-products-content {
+    width: 100%;
+    max-width: 500px;
+
+    min-height: 350px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+
+    padding: 40px 25px;
+
     text-align: center;
-  }
-  
-  .no-products-icon {
-    font-size: 3rem;
+
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.no-products-icon {
+    margin-bottom: 18px;
+
     color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .no-products-title {
+
+    font-size: 3rem;
+
+    line-height: 1;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.no-products-title {
+    margin: 0 0 8px;
+
+    color: #333;
+
     font-size: 1.25rem;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  .no-products-message {
-    color: #666;
+
+    line-height: 1.4;
+}
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.no-products-message {
+    width: 100%;
     max-width: 400px;
-  }
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .no-products-container {
+        min-height: 450px;
+    }
+
+    .no-products-content {
+        min-height: 400px;
+    }
+
+    .no-products-icon {
+        font-size: 3.2rem;
+    }
+
+    .no-products-title {
+        font-size: 1.3rem;
+    }
+
+    .no-products-message {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .no-products-container {
+        min-height: 350px;
+
+        padding: 20px 15px;
+    }
+
+    .no-products-content {
+        min-height: 320px;
+
+        padding: 35px 20px;
+    }
+
+    .no-products-icon {
+        font-size: 2.7rem;
+
+        margin-bottom: 15px;
+    }
+
+    .no-products-title {
+        font-size: 1.15rem;
+
+        margin-bottom: 7px;
+    }
+
+    .no-products-message {
+        max-width: 380px;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .no-products-container {
+        min-height: 300px;
+
+        padding: 15px 10px;
+    }
+
+    .no-products-content {
+        min-height: 280px;
+
+        padding: 30px 15px;
+    }
+
+    .no-products-icon {
+        font-size: 2.4rem;
+
+        margin-bottom: 14px;
+    }
+
+    .no-products-title {
+        font-size: 1.05rem;
+
+        margin-bottom: 7px;
+    }
+
+    .no-products-message {
+        max-width: 320px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .no-products-container {
+        min-height: 270px;
+
+        padding: 10px 8px;
+    }
+
+    .no-products-content {
+        min-height: 250px;
+
+        padding: 25px 10px;
+    }
+
+    .no-products-icon {
+        font-size: 2.1rem;
+
+        margin-bottom: 12px;
+    }
+
+    .no-products-title {
+        font-size: 1rem;
+    }
+
+    .no-products-message {
+        max-width: 280px;
+
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 320px) {
+
+    .no-products-container {
+        min-height: 240px;
+    }
+
+    .no-products-content {
+        min-height: 220px;
+
+        padding: 20px 8px;
+    }
+
+    .no-products-icon {
+        font-size: 1.9rem;
+    }
+
+    .no-products-title {
+        font-size: 0.95rem;
+    }
+
+    .no-products-message {
+        max-width: 250px;
+
+        font-size: 10px;
+    }
+}
