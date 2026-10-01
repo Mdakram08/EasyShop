@@ -1,41 +1,47 @@
-
-/* ================================
-   HOME PRODUCTS
-================================ */
+/* ```cs */
+/* =========================================================
+   HOME PRODUCTS — H&M / ZARA MINIMALIST STYLE
+========================================================= */
 
 .home-products-container {
-    width: 90%;
-    max-width: 1500px;
-    margin: 40px auto;
+    width: 94%;
+    max-width: 1600px;
+
+    margin: 55px auto 80px;
 
     display: flex;
     flex-wrap: wrap;
+
     justify-content: center;
     align-items: flex-start;
 
-    gap: 30px;
+    gap: 28px;
 
     box-sizing: border-box;
 }
 
 
-/* ================================
+/* =========================================================
    HOME HEADING
-================================ */
+========================================================= */
 
 .home-heading {
     width: 100%;
+
+    margin: 0 0 42px;
+    padding: 0;
+
     text-align: center;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 500;
 
-    line-height: 1.3;
+    line-height: 1.2;
+    letter-spacing: 2px;
 
-    margin: 0 0 25px;
-    padding: 0 15px;
+    text-transform: uppercase;
 
     color: #111;
 
@@ -43,116 +49,172 @@
 }
 
 
-/* ================================
-   LARGE LAPTOP
-================================ */
+/* =========================================================
+   PRODUCT AREA
+========================================================= */
 
-@media (max-width: 1200px) {
+.home-products-container > * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
 
     .home-products-container {
         width: 92%;
-        margin: 35px auto;
-        gap: 25px;
+        max-width: 1700px;
+
+        margin-top: 65px;
+
+        gap: 32px;
     }
 
     .home-heading {
-        font-size: 29px;
-        margin-bottom: 22px;
+        font-size: 32px;
+        letter-spacing: 2.5px;
+
+        margin-bottom: 48px;
     }
 }
 
 
-/* ================================
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .home-products-container {
+        width: 94%;
+
+        margin: 50px auto 70px;
+
+        gap: 25px;
+    }
+
+    .home-heading {
+        font-size: 28px;
+        letter-spacing: 2px;
+
+        margin-bottom: 38px;
+    }
+}
+
+
+/* =========================================================
    TABLET
-================================ */
+========================================================= */
 
 @media (max-width: 900px) {
 
     .home-products-container {
         width: 94%;
-        margin: 30px auto;
+
+        margin: 42px auto 60px;
+
         gap: 22px;
     }
 
     .home-heading {
-        font-size: 27px;
+        font-size: 26px;
+        letter-spacing: 1.8px;
+
+        margin-bottom: 32px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-products-container {
+        width: 92%;
+
+        margin: 35px auto 50px;
+
+        gap: 18px;
+    }
+
+    .home-heading {
+        font-size: 22px;
+        letter-spacing: 1.5px;
+
+        margin-bottom: 28px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-products-container {
+        width: 94%;
+
+        margin: 30px auto 45px;
+
+        gap: 14px;
+    }
+
+    .home-heading {
+        font-size: 20px;
+        letter-spacing: 1.2px;
+
+        margin-bottom: 24px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .home-products-container {
+        width: 94%;
+
+        margin: 25px auto 40px;
+
+        gap: 12px;
+    }
+
+    .home-heading {
+        font-size: 18px;
+        letter-spacing: 1px;
+
         margin-bottom: 20px;
     }
 }
 
 
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 600px) {
-
-    .home-products-container {
-        width: 94%;
-        margin: 25px auto;
-        gap: 18px;
-    }
-
-    .home-heading {
-        font-size: 24px;
-        margin-bottom: 18px;
-        padding: 0 10px;
-    }
-}
-
-
-/* ================================
-   SMALL MOBILE
-================================ */
-
-@media (max-width: 480px) {
-
-    .home-products-container {
-        width: 96%;
-        margin: 22px auto;
-        gap: 15px;
-    }
-
-    .home-heading {
-        font-size: 21px;
-        margin-bottom: 16px;
-    }
-}
-
-
-/* ================================
-   VERY SMALL DEVICES
-================================ */
-
-@media (max-width: 360px) {
-
-    .home-products-container {
-        width: 96%;
-        margin: 18px auto;
-        gap: 12px;
-    }
-
-    .home-heading {
-        font-size: 19px;
-        margin-bottom: 14px;
-    }
-}
-
-
-/* ================================
+/* =========================================================
    EXTRA SMALL DEVICES
-================================ */
+========================================================= */
 
 @media (max-width: 320px) {
 
     .home-products-container {
-        width: 97%;
-        margin: 16px auto;
+        width: 95%;
+
+        margin: 22px auto 35px;
+
         gap: 10px;
     }
 
     .home-heading {
-        font-size: 18px;
-        padding: 0 5px;
+        font-size: 17px;
+        letter-spacing: 0.8px;
+
+        margin-bottom: 18px;
     }
 }
