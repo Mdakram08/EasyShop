@@ -3,65 +3,134 @@ import wrapAsync from "../utils/wrapAsync.js";
 import ExpressError from "../utils/ExpressError.js";
 import APIFeatures from "../utils/apiFuncnality.js";
 import {v2 as cloudinary} from "cloudinary";
+import {getData,setData,delData} from "../Config/Redis.js"
 
 // Create Product
 export const createProduct = wrapAsync(async (req, res) => {
-  let image=[];
-  if(typeof req.body.image==='string'){
-    image.push(req.body.image)
-  }else{
-    image=req.body.image
+  // Prepare the image array
+  let images = [];
+  if (typeof req.body.image === "string") {
+    images.push(req.body.image);
+  } else if (Array.isArray(req.body.image)) {
+    images = req.body.image;
   }
-  const imageLinks=[];
-  for(let i=0;i<image.length;i++){
-    const result=await cloudinary.uploader.upload(image[i],{
-      folder:"products"
-    })
+  // Upload images to Cloudinary
+  const imageLinks = [];
+  for (const image of images) {
+    const result = await cloudinary.v2.uploader.upload(image, {
+      folder: "products",
+    });
     imageLinks.push({
-      public_id:result.public_id,
-      url:result.secure_url
-    })
+      public_id: result.public_id,
+      url: result.secure_url,
+    });
   }
-  req.body.image=imageLinks;
-
-  req.body.user=req.user.id;
+  req.body.image = imageLinks;
+  req.body.user = req.user.id;
+  // R — Create the product in MongoDB
   const product = await Product.create(req.body);
-  res.status(201).json({
+  // T — Invalidate the product list cache
+  // The newly created product has no existing individual cache key.
+  try {
+    await delData("products:all");
+  } catch (error) {
+    console.error("Redis invalidation failed:", error.message);
+  }
+  return res.status(201).json({
     success: true,
     product,
   });
 });
 
+
 // Get All Products
-export const getAllProducts =wrapAsync(async (req, res,next) => {
-    const apiFeatures = new APIFeatures(
-        Product.find(),
-        req.query
-    )
-    .search().filter();
-    const products = await apiFeatures.query;
-    if(products.length === 0){
-      return next(new ExpressError("No products listed ",404))
-    }
-    res.status(200).json({
+export const getAllProducts = wrapAsync(async (req, res, next) => {
+  // Step 1: Check whether the request has search or filter query parameters
+  // If req.query is empty, this is a request for all products without filters
+  const shouldCache = Object.keys(req.query).length === 0;
+  // Step 2: Create a Redis cache key for the complete product list
+  const cacheKey = "products:all";
+  // Step 3: Check Redis only when the request has no query parameters
+  if (shouldCache) {
+    const cachedProducts = await getData(cacheKey);
+    // Step 4: If products exist in Redis (Cache Hit),
+    // convert the JSON string back into an array and return it
+    if (cachedProducts) {
+      return res.status(200).json({
         success: true,
-        products
-    });
+        products: JSON.parse(cachedProducts),
+      });
+    }
+  }
+  // Step 5: If the cache is missing or the request has filters,
+  // prepare the MongoDB query with search and filter functionality
+  const apiFeatures = new APIFeatures(
+    Product.find(),
+    req.query
+  ).search().filter();
+  // Step 6: Execute the MongoDB query and get the products
+  const products = await apiFeatures.query;
+  // Step 7: If no products are found, pass a 404 error
+  // to the error-handling middleware
+  if (products.length === 0) {
+    return next(new ExpressError("No products listed", 404));
+  }
+  // Step 8: Cache the results only if the request has no query parameters
+  if (shouldCache) {
+    // Convert the products array into a JSON string and save it in Redis
+    // EX, 300 means the cache expires after 300 seconds (5 minutes)
+    await setData(
+      cacheKey,
+      JSON.stringify(products),
+      "EX",
+      300
+    );
+  }
+  // Step 9: Return the products to the client
+  return res.status(200).json({
+    success: true,
+    products,
+  });
 });
 
 // Get Single Product
-export const getSingleProduct = wrapAsync(async (req, res,next) => {
-  const product = await Product.findById(req.params.id);
-
-  if (!product) {
-    return next(new ExpressError("No product Found",401));
+export const getSingleProduct = wrapAsync(async (req, res, next) => {
+  // Step 1: Create a unique Redis cache key using the product ID
+  const cacheKey = `product:${req.params.id}`;
+  // Step 2: Check Redis to see if this product is already cached
+  const cachedProduct = await getData(cacheKey);
+  // Step 3: If the product exists in Redis (Cache Hit)
+  if (cachedProduct) { 
+    // Convert the cached JSON string back into a JavaScript object
+    // Return the cached product without querying MongoDB
+    return res.status(200).json({
+      success: true,
+      product: JSON.parse(cachedProduct),
+    });
   }
-
-  res.status(200).json({
+  // Step 4: If the product is not in Redis (Cache Miss),
+  // fetch the product from MongoDB using its ID
+  const product = await Product.findById(req.params.id);
+  // Step 5: If the product does not exist in MongoDB,
+  // pass a 404 error to the error-handling middleware
+  if (!product) {
+    return next(new ExpressError("No product Found", 404));
+  }
+  // Step 6: Save the product in Redis as a JSON string
+  // EX, 300 means the cache expires after 300 seconds (5 minutes)
+  await setData(
+    cacheKey,
+    JSON.stringify(product),
+    "EX",
+    300
+  );
+  // Step 7: Return the product fetched from MongoDB
+  return res.status(200).json({
     success: true,
     product,
   });
 });
+
 
 // creating new reviews for product
 export const createReviewforProduct = wrapAsync(async (req, res, next) => {
@@ -241,6 +310,7 @@ export const updateProduct = wrapAsync(async (req, res, next) => {
     // Replace the old image information in the request
     // with the newly uploaded Cloudinary image information.
     req.body.image = imageLinks;
+    
   }
 
   product = await Product.findByIdAndUpdate(
@@ -252,31 +322,48 @@ export const updateProduct = wrapAsync(async (req, res, next) => {
     }
   );
 
+  try{
+    await delData("products:all");
+    await delData(`product:${req.params.id}`);
+  }catch(error){
+    console.error("Redis cache invalidation failed:", error.message);
+  }
+
   res.status(200).json({
     success: true,
     product,
   });
 });
 
-// Delete Product
-export const deleteProduct = wrapAsync(async (req, res,next) => {
-  let product = await Product.findById(req.params.id);
 
+// Delete Product
+export const deleteProduct = wrapAsync(async (req, res, next) => {
+  // Step 1: Find the product in MongoDB using its ID
+  const product = await Product.findById(req.params.id);
+  // Step 2: If the product doesn't exist, return a 404 error
   if (!product) {
     return next(new ExpressError("Product not found", 404));
   }
-  //delete Image
-  for(let i=0;i<product.image.length;i++){
-    await cloudinary.uploader.destroy(product.image[0].public_id)
+  // Step 3: Delete all product images from Cloudinary
+  for (let i = 0; i < product.image.length; i++) {
+    await cloudinary.uploader.destroy(
+      product.image[i].public_id
+    );
   }
+  // Step 4: Delete the product from MongoDB
   await Product.findByIdAndDelete(req.params.id);
-
-  res.status(200).json({
+  // Step 5: Delete the cached list of all products from Redis
+  await delData("products:all");
+  // Step 6: Delete the individual product cache from Redis
+  await delData(`product:${req.params.id}`);
+  // Step 7: Send a success response to the client
+  return res.status(200).json({
     success: true,
-    message:"Product Deleated Successfully!",
-    product
+    message: "Product Deleted Successfully!",
+    product,
   });
 });
+
 
 //get admin product
 export const getAdminproducts=wrapAsync(async(req,res,next)=>{

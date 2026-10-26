@@ -1,13 +1,14 @@
 import express from "express";
 import { userLogin, userRegister ,userLogout, requestPasswordReset, resetPassword, userProfileDetails, updatePassword, updateUserDetails, getAdminUsers,getAdminSingleUser,adminUpdateUserRole, deleteAdminuser} from "../controllers/userControllers.js";
 import { userAuth,userBasedRoles } from "../utils/userAuth.js";
+import { rateLimitter } from "../Config/rateLimitter.js";
 
 const router = express.Router();
 
 //user register
 router.post("/user/register",userRegister);
 //user login
-router.post("/user/login",userLogin);
+router.post("/user/login",rateLimitter,userLogin);
 //user logout
 router.post("/user/logout",userLogout);
 //user forget password

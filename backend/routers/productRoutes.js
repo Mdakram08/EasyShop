@@ -12,6 +12,7 @@ import {
   deleteProductReview
 } from "../controllers/productControllers.js";
 import {userAuth,userBasedRoles} from "../utils/userAuth.js"
+import { rateLimitter } from "../Config/rateLimitter.js";
 
 const router = express.Router();
 

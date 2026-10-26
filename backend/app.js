@@ -45,7 +45,7 @@ mongoose
     console.log(`DB connected successfully `);
   })
   .catch((err) => {
-    console.log("MongoDB connection error:", err);
+    console.log("MongoDB connection error:", err.message);
   });
 
 // routes
@@ -80,9 +80,24 @@ app.use((err, req, res, next) => {
   res.status(statusCode).send(message);
 });
 
+
+//redis
+import { connectRedis } from "./Config/Redis.js";
+
 // port
 const PORT = process.env.PORT || 7000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
-});
+async function startServer() {
+  try {
+    await connectRedis();
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Server startup failed:", error);
+    process.exit(1);
+  }
+}
+
+startServer();
