@@ -1,11 +1,24 @@
 import redis from "redis";
 import { promisify } from "util";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 // Create a Redis client to connect to the Redis server
-const redisClient = redis.createClient({
-  host: "127.0.0.1", // Redis server address (localhost on your computer)
-  port: 6379,        // Default Redis port
-});
+const redisUrl = process.env.REDIS_URL;
+
+console.log(
+    "[Redis] Environment variable:",
+    redisUrl ? "LOADED" : "NOT LOADED"
+);
+console.log("Redis URL exists:", !!process.env.REDIS_URL);
+console.log("Redis host:", process.env.REDIS_URL
+    ? new URL(process.env.REDIS_URL).hostname
+    : "MISSING");
+
+const redisClient = redis.createClient(
+    redisUrl || "redis://127.0.0.1:6379"
+);
 
 redisClient.on("error", (err) => {
   console.error("[Redis] Error:", err.message);
