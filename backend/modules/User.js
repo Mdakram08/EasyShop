@@ -53,18 +53,11 @@ const userSchema = new mongoose.Schema({
 
 });
 
-//password hash
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    return ;
-  }
-  this.password = await bcryptjs.hash(this.password, 10);
-});
 
 // JWT token generate
-userSchema.methods.getjwtToken=function(){
-  return jwt.sign({id:this._id},process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRES})
-}
+// userSchema.methods.getjwtToken=function(){
+//   return jwt.sign({id:this._id},process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRES})
+// }
 
 //to get resesttoken
 userSchema.methods.getResetPasswordToken = function () {

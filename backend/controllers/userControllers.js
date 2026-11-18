@@ -2,10 +2,11 @@ import User from "../modules/User.js";
 import wrapAsync from "../utils/wrapAsync.js";
 import bcrypt from "bcryptjs"
 import ExpressError from "../utils/ExpressError.js";
-import sendToken from "../utils/jwtToken.js";
+import generateToken from "../utils/jwtToken.js";
 import { sendEmail } from "../utils/sendEmail.js";
 import crypto from "crypto";
 import cloudinary from "cloudinary"
+// import strict from "assert/strict";
 
 //new user Registration
 export const userRegister = wrapAsync(async (req, res, next) => {
@@ -21,18 +22,35 @@ export const userRegister = wrapAsync(async (req, res, next) => {
     if (registered) {
         return next(new ExpressError("User Already Registered. Login to continue...",409));
     }
+    const hashPassword=await bcrypt.hash(password,10);
     // Create new user Password will be hashed automatically by the pre("save") middleware
     const user = await User.create({
         userName,
         email,
-        password,
+        password:hashPassword,
         avatar: {
             public_id: myCloud.public_id,
             url: myCloud.secure_url
         }
     });
-    // Generate JWT token using schema method
-    sendToken(user,201,res);
+    // Generate JWT token using schema 
+    let token
+    try {
+        token=generateToken(user._id);
+    } catch (error) {
+        console.log(error)
+    }
+    res.cookie("token",token,{
+        httpOnly:true,
+        // secure:process.env.NODE_ENV != "production",
+        sameSite:"strict",
+        maxAge:7* 24 * 60 * 60 * 1000
+    })
+    res.status(200).json({
+       success: true,
+       message: "Registered Successfully",
+       user
+    })
 });
 
 
@@ -52,18 +70,29 @@ export const userLogin = wrapAsync(async (req, res, next) => {
         return next(new ExpressError("Invalid Email or Password",401));
     }
     // Compare entered password with hashed password in database
-    const isMatch = await bcrypt.compare(
-        password,
-        user.password
-    );
+    const isMatch = await bcrypt.compare(password,user.password);
     // If password doesn't match
     if (!isMatch) {
         return next(new ExpressError("Incorrect Password try again..",401));
     }
     // Generate JWT token using schema method
-    const token = user.getjwtToken();
-    // Send success response
-    sendToken(user,201,res);
+    let token
+    try {
+        token=generateToken(user._id);
+    } catch (error) {
+        console.log(error)
+    }
+    res.cookie("token",token,{
+        httpOnly:true,
+        // secure:process.env.NODE_ENV != "production",
+        sameSite:"strict",
+        maxAge:7* 24 * 60 * 60 * 1000
+    })
+    res.status(200).json({
+       success: true,
+       message: "Login Successfull",
+       user
+    })
 });
 
 
@@ -209,7 +238,24 @@ export const updatePassword = wrapAsync(async (req, res, next) => {
     //Save updated user in database
     await user.save();
     //Send new JWT token after password update (auto login again)
-    sendToken(user, 201, res);
+    // sendToken(user, 201, res);
+    let token
+    try {
+        token=generateToken(user._id);
+    } catch (error) {
+        console.log(error)
+    }
+    res.cookie("token",token,{
+        httpOnly:true,
+        // secure:process.env.NODE_ENV != "production",
+        sameSite:"strict",
+        maxAge:7* 24 * 60 * 60 * 1000
+    })
+    res.status(200).json({
+       success: true,
+       message: "Updated Password Successfull",
+       user
+    })
 });
 
 //update user details
